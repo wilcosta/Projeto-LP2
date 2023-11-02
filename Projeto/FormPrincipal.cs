@@ -1,19 +1,26 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Projeto
 {
     public partial class FormPrincipal : Form
     {
-        public FormPrincipal()
+        public FormPrincipal(string nomeDoUsuario)
         {
             InitializeComponent();
             AtualizarListView(); // Carregue a ListView no início do formulário
             btnEditar.Enabled = false; // Desabilita o botão "Detalhar" no início
             btnExcluir.Enabled = false; // Desabilita o botão "Excluir" no início
+
+            lblSaudacao.Text = "Olá, " + nomeDoUsuario + " seja bem-vindo(a)!";
+
+            // Associe o evento KeyUp do TextBox (txbBuscar) ao método BtnBuscar_KeyUp
+            txbBuscar.KeyUp += new KeyEventHandler(BtnBuscar_KeyUp);
         }
+
 
         // Método para atualizar a ListView com os dados do banco de dados
         public void AtualizarListView()
@@ -58,7 +65,7 @@ namespace Projeto
             }
         }
 
-        private void BtnAlterarUsuario_Click(object sender, EventArgs e)
+        private void LnkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
             FormLogin fl = new FormLogin();
@@ -167,6 +174,67 @@ namespace Projeto
                     btnExcluir.Enabled = false;
                     btnEditar.Enabled = false;
                 }
+            }
+        }
+
+        private void LtvFormPrincipal_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                // Verifique se o clique ocorreu em uma área em branco da ListView
+                ListViewItem item = ltvFormPrincipal.GetItemAt(e.X, e.Y);
+
+                if (item == null)
+                {
+                    // Nenhum item foi clicado, desabilite os botões
+                    btnExcluir.Enabled = false;
+                    btnEditar.Enabled = false;
+                }
+            }
+        }
+
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            string termoDeBusca = txbBuscar.Text.ToLower(); // Obtém o termo de busca do TextBox
+
+            if (string.IsNullOrEmpty(termoDeBusca))
+            {
+                // Se o campo de pesquisa estiver vazio, limpe a pesquisa e reexiba todos os itens
+                AtualizarListView();
+            }
+            else
+            {
+                // Realiza a pesquisa com base no termo inserido no TextBox
+                foreach (ListViewItem item in ltvFormPrincipal.Items)
+                {
+                    bool encontrado = false;
+                    foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
+                    {
+                        if (subItem.Text.ToLower().Contains(termoDeBusca))
+                        {
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                    item.Selected = encontrado;
+                }
+            }
+
+            // Desabilite os botões "Detalhar" e "Excluir" após a pesquisa
+            btnEditar.Enabled = false;
+            btnExcluir.Enabled = false;
+
+            // Limpe o TextBox de pesquisa
+            txbBuscar.Text = "";
+        }
+
+        private void BtnBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Se o usuário pressionar Enter no TextBox de pesquisa, acione o evento de busca
+                BtnBuscar_Click(sender, e);
             }
         }
     }

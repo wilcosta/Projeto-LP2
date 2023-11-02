@@ -40,9 +40,14 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnAlterarUsuario = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnDefinir = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.BtnCadastrar = new System.Windows.Forms.Button();
-            this.txbPesquisar = new System.Windows.Forms.TextBox();
+            this.txbBuscar = new System.Windows.Forms.TextBox();
+            this.lblSaudacao = new System.Windows.Forms.Label();
+            this.lnkLabel = new System.Windows.Forms.LinkLabel();
+            this.tblLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.tblLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExcluir
@@ -88,14 +93,15 @@
             this.ltvFormPrincipal.FullRowSelect = true;
             this.ltvFormPrincipal.GridLines = true;
             this.ltvFormPrincipal.HideSelection = false;
-            this.ltvFormPrincipal.Location = new System.Drawing.Point(13, 86);
+            this.ltvFormPrincipal.Location = new System.Drawing.Point(13, 98);
             this.ltvFormPrincipal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ltvFormPrincipal.Name = "ltvFormPrincipal";
-            this.ltvFormPrincipal.Size = new System.Drawing.Size(1324, 558);
+            this.ltvFormPrincipal.Size = new System.Drawing.Size(1324, 546);
             this.ltvFormPrincipal.TabIndex = 12;
             this.ltvFormPrincipal.UseCompatibleStateImageBehavior = false;
             this.ltvFormPrincipal.View = System.Windows.Forms.View.Details;
             this.ltvFormPrincipal.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LtvFormPrincipal_MouseDoubleClick);
+            this.ltvFormPrincipal.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LtvFormPrincipal_MouseUp);
             // 
             // columnHeader1
             // 
@@ -151,27 +157,39 @@
             this.btnAlterarUsuario.Name = "btnAlterarUsuario";
             this.btnAlterarUsuario.Size = new System.Drawing.Size(150, 35);
             this.btnAlterarUsuario.TabIndex = 13;
-            this.btnAlterarUsuario.Text = "Alterar Usuário";
+            this.btnAlterarUsuario.Text = "Registrar Baixa";
             this.btnAlterarUsuario.UseVisualStyleBackColor = true;
-            this.btnAlterarUsuario.Click += new System.EventHandler(this.BtnAlterarUsuario_Click);
             // 
-            // btnPesquisar
+            // btnDefinir
             // 
-            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(307, 41);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(150, 35);
-            this.btnPesquisar.TabIndex = 21;
-            this.btnPesquisar.Text = "Buscar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnDefinir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDefinir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefinir.Location = new System.Drawing.Point(1029, 53);
+            this.btnDefinir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDefinir.Name = "btnDefinir";
+            this.btnDefinir.Size = new System.Drawing.Size(150, 35);
+            this.btnDefinir.TabIndex = 19;
+            this.btnDefinir.Text = "À Definir";
+            this.btnDefinir.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(329, 53);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(150, 35);
+            this.btnBuscar.TabIndex = 21;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
+            this.btnBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BtnBuscar_KeyUp);
             // 
             // BtnCadastrar
             // 
             this.BtnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadastrar.Location = new System.Drawing.Point(1187, 41);
+            this.BtnCadastrar.Location = new System.Drawing.Point(1187, 53);
             this.BtnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCadastrar.Name = "BtnCadastrar";
             this.BtnCadastrar.Size = new System.Drawing.Size(150, 35);
@@ -180,22 +198,70 @@
             this.BtnCadastrar.UseVisualStyleBackColor = true;
             this.BtnCadastrar.Click += new System.EventHandler(this.BtnCadastrar_Click);
             // 
-            // txbPesquisar
+            // txbBuscar
             // 
-            this.txbPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPesquisar.Location = new System.Drawing.Point(13, 46);
-            this.txbPesquisar.Name = "txbPesquisar";
-            this.txbPesquisar.Size = new System.Drawing.Size(287, 29);
-            this.txbPesquisar.TabIndex = 23;
+            this.txbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbBuscar.Location = new System.Drawing.Point(13, 58);
+            this.txbBuscar.Name = "txbBuscar";
+            this.txbBuscar.Size = new System.Drawing.Size(309, 29);
+            this.txbBuscar.TabIndex = 23;
+            // 
+            // lblSaudacao
+            // 
+            this.lblSaudacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSaudacao.AutoSize = true;
+            this.lblSaudacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaudacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(143)))), ((int)(((byte)(154)))));
+            this.lblSaudacao.Location = new System.Drawing.Point(166, 0);
+            this.lblSaudacao.Name = "lblSaudacao";
+            this.lblSaudacao.Size = new System.Drawing.Size(82, 20);
+            this.lblSaudacao.TabIndex = 24;
+            this.lblSaudacao.Text = "Saudacao";
+            this.lblSaudacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lnkLabel
+            // 
+            this.lnkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(219)))));
+            this.lnkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lnkLabel.AutoSize = true;
+            this.lnkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lnkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(219)))));
+            this.lnkLabel.Location = new System.Drawing.Point(254, 0);
+            this.lnkLabel.Name = "lnkLabel";
+            this.lnkLabel.Size = new System.Drawing.Size(51, 18);
+            this.lnkLabel.TabIndex = 25;
+            this.lnkLabel.TabStop = true;
+            this.lnkLabel.Text = "logoff";
+            this.lnkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lnkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(219)))));
+            this.lnkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkLabel_LinkClicked);
+            // 
+            // tblLayoutPanel
+            // 
+            this.tblLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tblLayoutPanel.ColumnCount = 2;
+            this.tblLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.49351F));
+            this.tblLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.50649F));
+            this.tblLayoutPanel.Controls.Add(this.lnkLabel, 1, 0);
+            this.tblLayoutPanel.Controls.Add(this.lblSaudacao, 0, 0);
+            this.tblLayoutPanel.Location = new System.Drawing.Point(1029, 12);
+            this.tblLayoutPanel.Name = "tblLayoutPanel";
+            this.tblLayoutPanel.RowCount = 1;
+            this.tblLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblLayoutPanel.Size = new System.Drawing.Size(308, 21);
+            this.tblLayoutPanel.TabIndex = 26;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.txbPesquisar);
+            this.Controls.Add(this.tblLayoutPanel);
+            this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.BtnCadastrar);
-            this.Controls.Add(this.btnPesquisar);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnDefinir);
             this.Controls.Add(this.btnAlterarUsuario);
             this.Controls.Add(this.ltvFormPrincipal);
             this.Controls.Add(this.btnExcluir);
@@ -205,6 +271,8 @@
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Controle de Vencimentos";
+            this.tblLayoutPanel.ResumeLayout(false);
+            this.tblLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,9 +291,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnDefinir;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button BtnCadastrar;
-        private System.Windows.Forms.TextBox txbPesquisar;
-
+        private System.Windows.Forms.TextBox txbBuscar;
+        private System.Windows.Forms.Label lblSaudacao;
+        private System.Windows.Forms.LinkLabel lnkLabel;
+        private System.Windows.Forms.TableLayoutPanel tblLayoutPanel;
     }
 }

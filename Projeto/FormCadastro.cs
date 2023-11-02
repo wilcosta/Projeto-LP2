@@ -41,7 +41,7 @@ namespace Projeto
 
             if (buttonText == "Incluir")
             {
-                // Inclusão
+                // Modo de inclusão
                 string descricao = txbDescricao.Text;
                 string codigoBarra = txbCodigoBarra.Text;
                 string unidade = cmbUnidade.Text;
@@ -102,7 +102,7 @@ namespace Projeto
             }
             else if (buttonText == "Salvar")
             {
-                // Edição
+                // Modo de edição
                 string descricao = txbDescricao.Text;
                 string codigoBarra = txbCodigoBarra.Text;
                 string unidade = cmbUnidade.Text;

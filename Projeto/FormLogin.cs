@@ -38,8 +38,11 @@ namespace Projeto
 
                     if (count == 1)
                     {
+                        // Obter o nome de usuário autenticado
+                        string nomeDoUsuario = txbNome.Text;
+
                         this.Hide(); // Oculta o formulário de login.
-                        FormPrincipal fm = new FormPrincipal(); // Cria uma instância do formulário principal.
+                        FormPrincipal fm = new FormPrincipal(nomeDoUsuario); // Passe o nome do usuário para o FormPrincipal
                         fm.Show(); // Exibe o formulário principal.
                     }
                     else

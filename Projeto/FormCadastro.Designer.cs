@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.lblDescricao = new System.Windows.Forms.Label();
-            this.lblCodigoBarra = new System.Windows.Forms.Label();
-            this.lblUnidade = new System.Windows.Forms.Label();
-            this.lblQuantidade = new System.Windows.Forms.Label();
+            this.lblCodBar = new System.Windows.Forms.Label();
+            this.lblUnid = new System.Windows.Forms.Label();
+            this.lblQtde = new System.Windows.Forms.Label();
             this.txbDescricao = new System.Windows.Forms.TextBox();
             this.txbCodigoBarra = new System.Windows.Forms.TextBox();
             this.txbQuantidade = new System.Windows.Forms.TextBox();
             this.BtnIncluir = new System.Windows.Forms.Button();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
             this.txbObservacao = new System.Windows.Forms.TextBox();
-            this.lblObservacao = new System.Windows.Forms.Label();
-            this.lblDataVencimento = new System.Windows.Forms.Label();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.lblDataVenc = new System.Windows.Forms.Label();
             this.mtbDataVencimento = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
@@ -53,35 +53,35 @@
             this.lblDescricao.TabIndex = 0;
             this.lblDescricao.Text = "Descrição:";
             // 
-            // lblCodigoBarra
+            // lblCodBar
             // 
-            this.lblCodigoBarra.AutoSize = true;
-            this.lblCodigoBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoBarra.Location = new System.Drawing.Point(57, 93);
-            this.lblCodigoBarra.Name = "lblCodigoBarra";
-            this.lblCodigoBarra.Size = new System.Drawing.Size(136, 20);
-            this.lblCodigoBarra.TabIndex = 1;
-            this.lblCodigoBarra.Text = "Código de Barras:";
+            this.lblCodBar.AutoSize = true;
+            this.lblCodBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodBar.Location = new System.Drawing.Point(57, 93);
+            this.lblCodBar.Name = "lblCodBar";
+            this.lblCodBar.Size = new System.Drawing.Size(136, 20);
+            this.lblCodBar.TabIndex = 1;
+            this.lblCodBar.Text = "Código de Barras:";
             // 
-            // lblUnidade
+            // lblUnid
             // 
-            this.lblUnidade.AutoSize = true;
-            this.lblUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidade.Location = new System.Drawing.Point(57, 139);
-            this.lblUnidade.Name = "lblUnidade";
-            this.lblUnidade.Size = new System.Drawing.Size(73, 20);
-            this.lblUnidade.TabIndex = 2;
-            this.lblUnidade.Text = "Unidade:";
+            this.lblUnid.AutoSize = true;
+            this.lblUnid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnid.Location = new System.Drawing.Point(57, 139);
+            this.lblUnid.Name = "lblUnid";
+            this.lblUnid.Size = new System.Drawing.Size(73, 20);
+            this.lblUnid.TabIndex = 2;
+            this.lblUnid.Text = "Unidade:";
             // 
-            // lblQuantidade
+            // lblQtde
             // 
-            this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidade.Location = new System.Drawing.Point(279, 139);
-            this.lblQuantidade.Name = "lblQuantidade";
-            this.lblQuantidade.Size = new System.Drawing.Size(96, 20);
-            this.lblQuantidade.TabIndex = 3;
-            this.lblQuantidade.Text = "Quantidade:";
+            this.lblQtde.AutoSize = true;
+            this.lblQtde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQtde.Location = new System.Drawing.Point(279, 139);
+            this.lblQtde.Name = "lblQtde";
+            this.lblQtde.Size = new System.Drawing.Size(96, 20);
+            this.lblQtde.TabIndex = 3;
+            this.lblQtde.Text = "Quantidade:";
             // 
             // txbDescricao
             // 
@@ -156,25 +156,25 @@
             this.txbObservacao.Size = new System.Drawing.Size(375, 26);
             this.txbObservacao.TabIndex = 5;
             // 
-            // lblObservacao
+            // lblObs
             // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservacao.Location = new System.Drawing.Point(57, 231);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(46, 20);
-            this.lblObservacao.TabIndex = 10;
-            this.lblObservacao.Text = "Obs.:";
+            this.lblObs.AutoSize = true;
+            this.lblObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObs.Location = new System.Drawing.Point(57, 231);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(46, 20);
+            this.lblObs.TabIndex = 10;
+            this.lblObs.Text = "Obs.:";
             // 
-            // lblDataVencimento
+            // lblDataVenc
             // 
-            this.lblDataVencimento.AutoSize = true;
-            this.lblDataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataVencimento.Location = new System.Drawing.Point(57, 185);
-            this.lblDataVencimento.Name = "lblDataVencimento";
-            this.lblDataVencimento.Size = new System.Drawing.Size(159, 20);
-            this.lblDataVencimento.TabIndex = 12;
-            this.lblDataVencimento.Text = "Data de Vencimento:";
+            this.lblDataVenc.AutoSize = true;
+            this.lblDataVenc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataVenc.Location = new System.Drawing.Point(57, 185);
+            this.lblDataVenc.Name = "lblDataVenc";
+            this.lblDataVenc.Size = new System.Drawing.Size(159, 20);
+            this.lblDataVenc.TabIndex = 12;
+            this.lblDataVenc.Text = "Data de Vencimento:";
             // 
             // mtbDataVencimento
             // 
@@ -192,17 +192,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 376);
             this.Controls.Add(this.mtbDataVencimento);
-            this.Controls.Add(this.lblDataVencimento);
+            this.Controls.Add(this.lblDataVenc);
             this.Controls.Add(this.txbObservacao);
-            this.Controls.Add(this.lblObservacao);
+            this.Controls.Add(this.lblObs);
             this.Controls.Add(this.cmbUnidade);
             this.Controls.Add(this.BtnIncluir);
             this.Controls.Add(this.txbQuantidade);
             this.Controls.Add(this.txbCodigoBarra);
             this.Controls.Add(this.txbDescricao);
-            this.Controls.Add(this.lblQuantidade);
-            this.Controls.Add(this.lblUnidade);
-            this.Controls.Add(this.lblCodigoBarra);
+            this.Controls.Add(this.lblQtde);
+            this.Controls.Add(this.lblUnid);
+            this.Controls.Add(this.lblCodBar);
             this.Controls.Add(this.lblDescricao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -218,17 +218,17 @@
         #endregion
 
         private System.Windows.Forms.Label lblDescricao;
-        private System.Windows.Forms.Label lblCodigoBarra;
-        private System.Windows.Forms.Label lblUnidade;
-        private System.Windows.Forms.Label lblQuantidade;
+        private System.Windows.Forms.Label lblCodBar;
+        private System.Windows.Forms.Label lblUnid;
+        private System.Windows.Forms.Label lblQtde;
         private System.Windows.Forms.TextBox txbDescricao;
         private System.Windows.Forms.TextBox txbCodigoBarra;
         private System.Windows.Forms.TextBox txbQuantidade;
         private System.Windows.Forms.Button BtnIncluir;
         private System.Windows.Forms.ComboBox cmbUnidade;
         private System.Windows.Forms.TextBox txbObservacao;
-        private System.Windows.Forms.Label lblObservacao;
-        private System.Windows.Forms.Label lblDataVencimento;
+        private System.Windows.Forms.Label lblObs;
+        private System.Windows.Forms.Label lblDataVenc;
         private System.Windows.Forms.MaskedTextBox mtbDataVencimento;
     }
 }
