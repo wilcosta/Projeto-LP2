@@ -31,8 +31,8 @@ namespace Projeto
             }
             try
             {
-                // Conexão SQL
-                SqlConnection con = new SqlConnection(cs);  // Cria uma conexão com o banco de dados usando a string de conexão.
+                // Cria conexão com o banco de dados usando a string de conexão.
+                SqlConnection con = new SqlConnection(cs);  
                 SqlCommand cmd = new SqlCommand("Select * from tbl_Login where UserName=@username and Password=@password", con);
                 
                 // Cria um comando SQL para selecionar dados da tabela "tbl_Login" com base no nome de usuário e senha.
