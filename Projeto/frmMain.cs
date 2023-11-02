@@ -14,21 +14,26 @@ namespace Projeto
     {
         public frmMain()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
-        private void btn_LogOut_Click(object sender, EventArgs e)
+        private void BtnLogOut_Click(object sender, EventArgs e)
         {
-            this.Hide();  // Esconde o formulário atual (frmMain).
-            frmLogin fl = new frmLogin();  // Cria uma instância do formulário de login (frmLogin).
-            fl.Show();  // Exibe o formulário de login.
+            this.Close();
+            frmLogin fl = new frmLogin();
+            fl.Show();
         }
 
-        private void btn_Cadastrar_Click(object sender, EventArgs e)
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormCadastro formCad = new FormCadastro();  // Cria uma instância do formulário de cadastro (FormCadastro).
+            Application.Exit();
+        }
 
-            formCad.ShowDialog();  // Bloqueia a interação com demais formulários até que este formulário seja fechado.
+        private void BtnCadastrar_Click(object sender, EventArgs e)
+        {
+            
+            FormCadastro formCad = new FormCadastro();
+            formCad.ShowDialog(); 
         }
     }
 }

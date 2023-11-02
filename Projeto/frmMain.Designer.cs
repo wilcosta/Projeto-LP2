@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnApagar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
+            this.btn_Apagar = new System.Windows.Forms.Button();
+            this.btn_Editar = new System.Windows.Forms.Button();
+            this.btn_Inserir = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -39,36 +40,48 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnDefinir1 = new System.Windows.Forms.Button();
-            this.btnDefinir2 = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btn_LogOut = new System.Windows.Forms.Button();
+            this.btn_Imprimir = new System.Windows.Forms.Button();
+            this.btn_MarcarTodos = new System.Windows.Forms.Button();
+            this.btn_Pesquisar = new System.Windows.Forms.Button();
+            this.btn_Cadastrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnApagar
+            // btn_Apagar
             // 
-            this.btnApagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.Location = new System.Drawing.Point(171, 654);
-            this.btnApagar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(150, 35);
-            this.btnApagar.TabIndex = 6;
-            this.btnApagar.Text = "Apagar";
-            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btn_Apagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Apagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Apagar.Location = new System.Drawing.Point(329, 654);
+            this.btn_Apagar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Apagar.Name = "btn_Apagar";
+            this.btn_Apagar.Size = new System.Drawing.Size(150, 35);
+            this.btn_Apagar.TabIndex = 11;
+            this.btn_Apagar.Text = "Apagar";
+            this.btn_Apagar.UseVisualStyleBackColor = true;
             // 
-            // btnEditar
+            // btn_Editar
             // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(13, 654);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(150, 35);
-            this.btnEditar.TabIndex = 5;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Editar.Location = new System.Drawing.Point(171, 654);
+            this.btn_Editar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Editar.Name = "btn_Editar";
+            this.btn_Editar.Size = new System.Drawing.Size(150, 35);
+            this.btn_Editar.TabIndex = 10;
+            this.btn_Editar.Text = "Editar";
+            this.btn_Editar.UseVisualStyleBackColor = true;
+            // 
+            // btn_Inserir
+            // 
+            this.btn_Inserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Inserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Inserir.Location = new System.Drawing.Point(13, 654);
+            this.btn_Inserir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Inserir.Name = "btn_Inserir";
+            this.btn_Inserir.Size = new System.Drawing.Size(150, 35);
+            this.btn_Inserir.TabIndex = 9;
+            this.btn_Inserir.Text = "Inserir";
+            this.btn_Inserir.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
@@ -130,96 +143,98 @@
             // 
             // columnHeader8
             // 
-            this.columnHeader8.Text = "Observações";
+            this.columnHeader8.Text = "Observação";
             this.columnHeader8.Width = 250;
             // 
-            // btnLogOut
+            // btn_LogOut
             // 
-            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(1187, 654);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(150, 35);
-            this.btnLogOut.TabIndex = 7;
-            this.btnLogOut.Text = "Trocar Usuário";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
+            this.btn_LogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LogOut.Location = new System.Drawing.Point(1187, 654);
+            this.btn_LogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_LogOut.Name = "btn_LogOut";
+            this.btn_LogOut.Size = new System.Drawing.Size(150, 35);
+            this.btn_LogOut.TabIndex = 13;
+            this.btn_LogOut.Text = "Alterar Usuário";
+            this.btn_LogOut.UseVisualStyleBackColor = true;
+            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
             // 
-            // btnDefinir1
+            // btn_Imprimir
             // 
-            this.btnDefinir1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDefinir1.Location = new System.Drawing.Point(13, 41);
-            this.btnDefinir1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDefinir1.Name = "btnDefinir1";
-            this.btnDefinir1.Size = new System.Drawing.Size(150, 35);
-            this.btnDefinir1.TabIndex = 1;
-            this.btnDefinir1.Text = "À Definir";
-            this.btnDefinir1.UseVisualStyleBackColor = true;
+            this.btn_Imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Imprimir.Location = new System.Drawing.Point(13, 41);
+            this.btn_Imprimir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Imprimir.Name = "btn_Imprimir";
+            this.btn_Imprimir.Size = new System.Drawing.Size(150, 35);
+            this.btn_Imprimir.TabIndex = 19;
+            this.btn_Imprimir.Text = "Imprimir";
+            this.btn_Imprimir.UseVisualStyleBackColor = true;
             // 
-            // btnDefinir2
+            // btn_MarcarTodos
             // 
-            this.btnDefinir2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDefinir2.Location = new System.Drawing.Point(171, 41);
-            this.btnDefinir2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDefinir2.Name = "btnDefinir2";
-            this.btnDefinir2.Size = new System.Drawing.Size(150, 35);
-            this.btnDefinir2.TabIndex = 2;
-            this.btnDefinir2.Text = "À Definir";
-            this.btnDefinir2.UseVisualStyleBackColor = true;
+            this.btn_MarcarTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MarcarTodos.Location = new System.Drawing.Point(171, 41);
+            this.btn_MarcarTodos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_MarcarTodos.Name = "btn_MarcarTodos";
+            this.btn_MarcarTodos.Size = new System.Drawing.Size(150, 35);
+            this.btn_MarcarTodos.TabIndex = 20;
+            this.btn_MarcarTodos.Text = "Mostrar Todos";
+            this.btn_MarcarTodos.UseVisualStyleBackColor = true;
             // 
-            // btnPesquisar
+            // btn_Pesquisar
             // 
-            this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(1029, 41);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(150, 35);
-            this.btnPesquisar.TabIndex = 3;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btn_Pesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Pesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pesquisar.Location = new System.Drawing.Point(1029, 41);
+            this.btn_Pesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Pesquisar.Name = "btn_Pesquisar";
+            this.btn_Pesquisar.Size = new System.Drawing.Size(150, 35);
+            this.btn_Pesquisar.TabIndex = 21;
+            this.btn_Pesquisar.Text = "Buscar";
+            this.btn_Pesquisar.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrar
+            // btn_Cadastrar
             // 
-            this.btnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(1187, 41);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(150, 35);
-            this.btnCadastrar.TabIndex = 4;
-            this.btnCadastrar.Text = "Cadastrar Produto";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
+            this.btn_Cadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Cadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cadastrar.Location = new System.Drawing.Point(1187, 41);
+            this.btn_Cadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Cadastrar.Name = "btn_Cadastrar";
+            this.btn_Cadastrar.Size = new System.Drawing.Size(150, 35);
+            this.btn_Cadastrar.TabIndex = 22;
+            this.btn_Cadastrar.Text = "Cadastrar Produto";
+            this.btn_Cadastrar.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.btnDefinir2);
-            this.Controls.Add(this.btnDefinir1);
-            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btn_Cadastrar);
+            this.Controls.Add(this.btn_Pesquisar);
+            this.Controls.Add(this.btn_MarcarTodos);
+            this.Controls.Add(this.btn_Imprimir);
+            this.Controls.Add(this.btn_LogOut);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btn_Apagar);
+            this.Controls.Add(this.btn_Editar);
+            this.Controls.Add(this.btn_Inserir);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Controle de Validades";
+            this.Text = "Controle de Vencimentos";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnApagar;
-        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btn_Apagar;
+        private System.Windows.Forms.Button btn_Editar;
+        private System.Windows.Forms.Button btn_Inserir;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btn_LogOut;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -228,9 +243,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Button btnDefinir1;
-        private System.Windows.Forms.Button btnDefinir2;
-        private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btn_Imprimir;
+        private System.Windows.Forms.Button btn_MarcarTodos;
+        private System.Windows.Forms.Button btn_Pesquisar;
+        private System.Windows.Forms.Button btn_Cadastrar;
     }
 }
