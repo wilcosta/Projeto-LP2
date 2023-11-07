@@ -39,8 +39,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnAlterarUsuario = new System.Windows.Forms.Button();
-            this.btnDefinir = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.BtnCadastrar = new System.Windows.Forms.Button();
             this.txbBuscar = new System.Windows.Forms.TextBox();
@@ -148,34 +146,10 @@
             this.columnHeader8.Text = "Observação";
             this.columnHeader8.Width = 270;
             // 
-            // btnAlterarUsuario
-            // 
-            this.btnAlterarUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAlterarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterarUsuario.Location = new System.Drawing.Point(1187, 654);
-            this.btnAlterarUsuario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAlterarUsuario.Name = "btnAlterarUsuario";
-            this.btnAlterarUsuario.Size = new System.Drawing.Size(150, 35);
-            this.btnAlterarUsuario.TabIndex = 13;
-            this.btnAlterarUsuario.Text = "Registrar Baixa";
-            this.btnAlterarUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnDefinir
-            // 
-            this.btnDefinir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDefinir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDefinir.Location = new System.Drawing.Point(1029, 53);
-            this.btnDefinir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnDefinir.Name = "btnDefinir";
-            this.btnDefinir.Size = new System.Drawing.Size(150, 35);
-            this.btnDefinir.TabIndex = 19;
-            this.btnDefinir.Text = "À Definir";
-            this.btnDefinir.UseVisualStyleBackColor = true;
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(329, 53);
+            this.btnBuscar.Location = new System.Drawing.Point(1187, 53);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(150, 35);
@@ -189,7 +163,7 @@
             // 
             this.BtnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadastrar.Location = new System.Drawing.Point(1187, 53);
+            this.BtnCadastrar.Location = new System.Drawing.Point(1187, 654);
             this.BtnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCadastrar.Name = "BtnCadastrar";
             this.BtnCadastrar.Size = new System.Drawing.Size(150, 35);
@@ -201,7 +175,7 @@
             // txbBuscar
             // 
             this.txbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(13, 58);
+            this.txbBuscar.Location = new System.Drawing.Point(871, 58);
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(309, 29);
             this.txbBuscar.TabIndex = 23;
@@ -261,8 +235,6 @@
             this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.BtnCadastrar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnDefinir);
-            this.Controls.Add(this.btnAlterarUsuario);
             this.Controls.Add(this.ltvFormPrincipal);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
@@ -270,7 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Controle de Vencimentos";
+            this.Text = "Controle de Validades";
             this.tblLayoutPanel.ResumeLayout(false);
             this.tblLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -282,7 +254,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ListView ltvFormPrincipal;
-        private System.Windows.Forms.Button btnAlterarUsuario;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -291,7 +262,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Button btnDefinir;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button BtnCadastrar;
         private System.Windows.Forms.TextBox txbBuscar;
