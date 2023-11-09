@@ -7,57 +7,64 @@ namespace Projeto
 {
     public partial class FormLogin : Form
     {
-        private readonly Connection connection = new Connection(); // Cria uma instância da classe Connection para gerenciar a conexão com o banco de dados.
+        // Variável usada para acessar os dados do banco de dados.
+		
+		private readonly Connection connection = new Connection(); 
 
+		// Inicializa os componentes da tela de Login.
+		
         public FormLogin()
         {
-            InitializeComponent(); // Inicializa o formulário.
+            InitializeComponent(); 
         }
+		
+		// Verifica se o usuário inseriu seu nome de usuário e senha. Se o usuário não inseriu seu nome de usuário ou senha, o código 
+		// exibirá uma mensagem de erro ao usuário e retornará. Após o preenchimento do "nome" e "senha", será aberta uma conexão e 
+		// criado um comando SQL para selecionar todos os registros da tabela "tbl_Login" onde o nome de usuário e a senha correspondam 
+		// aos valores inseridos pelo usuário. Se as credenciais forem válidas, o código abrirá o formulário principal. 
+		// Se as credenciais não forem válidas, o código exibirá uma mensagem de erro ao usuário.
 
         private void BtnEntrar_Click(object sender, EventArgs e)
         {
             if (txbNome.Text == "" || txbSenha.Text == "")
             {
                 MessageBox.Show("Por favor insira seu usuário e senha.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return; // Verifica se os campos de usuário e senha estão vazios e exibe uma mensagem de erro.
+                return; 
             }
 
             try
             {
-                using (SqlConnection con = connection.ReturnConnection()) // Cria uma conexão com o banco de dados usando a classe Connection.
+                using (SqlConnection con = connection.ReturnConnection())
                 using (SqlCommand cmd = new SqlCommand("Select * from tbl_Login where UserName=@username and Password=@password", con))
                 {
-                    cmd.Parameters.AddWithValue("@username", txbNome.Text); // Define os parâmetros @username e @password na consulta SQL.
+                    cmd.Parameters.AddWithValue("@username", txbNome.Text);
                     cmd.Parameters.AddWithValue("@password", txbSenha.Text);
-                    con.Open(); // Abre a conexão com o banco de dados.
+                    con.Open();
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
-                    adapt.Fill(ds); // Executa a consulta SQL e preenche um DataSet.
+                    adapt.Fill(ds);
 
-                    int count = ds.Tables[0].Rows.Count; // Obtém o número de linhas retornadas pela consulta.
+                    int count = ds.Tables[0].Rows.Count;
 
                     if (count == 1)
                     {
-                        // Obter o nome de usuário autenticado
                         string nomeDoUsuario = txbNome.Text;
 
-                        this.Hide(); // Oculta o formulário de login.
-                        FormPrincipal fm = new FormPrincipal(nomeDoUsuario); // Passe o nome do usuário para o FormPrincipal
-                        fm.Show(); // Exibe o formulário principal.
+                        this.Hide();
+                        FormPrincipal fm = new FormPrincipal(nomeDoUsuario);
+                        fm.Show();
                     }
                     else
                     {
                         MessageBox.Show("Acesso Negado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        // Limpa os campos após acesso negado
-                        txbNome.Clear(); // Limpa o campo de nome de usuário.
-                        txbSenha.Clear(); // Limpa o campo de senha.
+                        txbNome.Clear();
+                        txbSenha.Clear();
                     }
                 }
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message); // Trata exceções e exibe mensagens de erro, se houverem.
+                MessageBox.Show(err.Message); 
             }
         }
     }
