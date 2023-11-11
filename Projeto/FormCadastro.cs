@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace Projeto
@@ -42,9 +43,9 @@ namespace Projeto
             }
         }
 
-		// Tem a funcionalidade de gerenciar a inclusão e atualização de informações no banco de dados a partir dos valores fornecidos nos campos do formulário. 
-		// Para tanto, verifica se os campos obrigatórios estão preenchidos, converte a data de vencimento, prepara instruções SQL seguras e lida com erros. 
-		// Após a conclusão da operação, exibe mensagens de sucesso ou erro e atualiza a interface do usuário.
+        // Tem a funcionalidade de gerenciar a inclusão e atualização de informações no banco de dados a partir dos valores fornecidos nos campos do formulário. 
+        // Para tanto, verifica se os campos obrigatórios estão preenchidos, converte a data de vencimento, prepara instruções SQL seguras e lida com erros. 
+        // Após a conclusão da operação, exibe mensagens de sucesso ou erro e atualiza a interface do usuário.
 
         private void BtnIncluir_Click(object sender, EventArgs e)
         {
@@ -71,9 +72,10 @@ namespace Projeto
                     return;
                 }
 
+
                 try
                 {
-                    DateTime dataVencimentoDate = DateTime.Parse(dataVencimento);
+                    DateTime dataVencimentoDate = Convert.ToDateTime(dataVencimento);
                     TimeSpan diasRestantes = dataVencimentoDate - DateTime.Now;
                     int diasRestantesValor = (int)diasRestantes.TotalDays;
 
@@ -87,7 +89,7 @@ namespace Projeto
                         cmd.Parameters.AddWithValue("@CodigoBarra", codigoBarra);
                         cmd.Parameters.AddWithValue("@Unidade", unidade);
                         cmd.Parameters.AddWithValue("@Quantidade", quantidade);
-                        cmd.Parameters.AddWithValue("@DataVencimento", dataVencimento);
+                        cmd.Parameters.AddWithValue("@DataVencimento", dataVencimentoDate);
                         cmd.Parameters.AddWithValue("@Observacao", observacao);
                         cmd.Parameters.AddWithValue("@DiasRestantes", diasRestantesValor);
                         cmd.Parameters.AddWithValue("@Codigo", DBNull.Value);
@@ -107,9 +109,9 @@ namespace Projeto
                         }
                     }
                 }
-                catch (FormatException)
+                catch (FormatException err)
                 {
-                    MessageBox.Show("A data de vencimento não está em um formato válido.");
+                    MessageBox.Show("A data de vencimento não está em um formato válido. " + err.Message);
                 }
                 catch (Exception err)
                 {
