@@ -21,9 +21,9 @@ namespace Projeto
             this.formPrincipal = principalForm;
         }
 
-		// Inicializa os componentes da tela FormCadastro e após verificar se o "código" do produto não é vazio, as linhas de códigos seguintes 
-		// preenchem os campos com as informações fornecidas nos parâmetros. A última linha altera o texto do botão "Incluir" para "Salvar".
-		
+        // Inicializa os componentes da tela FormCadastro e após verificar se o "código" do produto não é vazio, as linhas de códigos seguintes 
+        // preenchem os campos com as informações fornecidas nos parâmetros. A última linha altera o texto do botão "Incluir" para "Salvar".
+
         public FormCadastro(FormPrincipal principalForm, string codigo, string descricao, string codigoBarra, string unidade, string quantidade, string dataVencimento, string observacao)
         {
             InitializeComponent();
@@ -72,7 +72,7 @@ namespace Projeto
                     return;
                 }
 
-
+                  
                 try
                 {
                     DateTime dataVencimentoDate = Convert.ToDateTime(dataVencimento);
@@ -232,6 +232,18 @@ namespace Projeto
             {
                 return false;
             }
+        }
+
+        // Chama o método criado na classe Program, responsável por realizar o controle dos caracteres digitados no txbCodigoBarra / txbQuantidade. 
+
+        private void TxbCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.IntNumber(e);
+        }
+
+        private void TxbQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.IntNumber(e);
         }
     }
 }

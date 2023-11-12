@@ -99,6 +99,7 @@
             this.txbCodigoBarra.Name = "txbCodigoBarra";
             this.txbCodigoBarra.Size = new System.Drawing.Size(285, 26);
             this.txbCodigoBarra.TabIndex = 1;
+            this.txbCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbCodigoBarra_KeyPress);
             // 
             // txbQuantidade
             // 
@@ -107,6 +108,7 @@
             this.txbQuantidade.Name = "txbQuantidade";
             this.txbQuantidade.Size = new System.Drawing.Size(103, 26);
             this.txbQuantidade.TabIndex = 3;
+            this.txbQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxbQuantidade_KeyPress);
             // 
             // BtnIncluir
             // 
