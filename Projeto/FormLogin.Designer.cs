@@ -59,6 +59,7 @@
             // 
             this.txbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNome.Location = new System.Drawing.Point(115, 68);
+            this.txbNome.MaxLength = 30;
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(235, 26);
             this.txbNome.TabIndex = 2;
@@ -67,23 +68,24 @@
             // 
             this.txbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.Location = new System.Drawing.Point(115, 117);
+            this.txbSenha.MaxLength = 30;
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(235, 26);
             this.txbSenha.TabIndex = 3;
             this.txbSenha.UseSystemPasswordChar = true;
             // 
-            // btnEntrar
+            // BtnEntrar
             // 
             this.BtnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEntrar.Location = new System.Drawing.Point(148, 179);
-            this.BtnEntrar.Name = "btnEntrar";
+            this.BtnEntrar.Name = "BtnEntrar";
             this.BtnEntrar.Size = new System.Drawing.Size(111, 37);
             this.BtnEntrar.TabIndex = 4;
             this.BtnEntrar.Text = "Entrar";
             this.BtnEntrar.UseVisualStyleBackColor = true;
             this.BtnEntrar.Click += new System.EventHandler(this.BtnEntrar_Click);
             // 
-            // frmLogin
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +98,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmLogin";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autenticação";
             this.ResumeLayout(false);

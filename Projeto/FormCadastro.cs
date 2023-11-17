@@ -148,7 +148,7 @@ namespace Projeto
                         cmd.Parameters.AddWithValue("@CodigoBarra", codigoBarra);
                         cmd.Parameters.AddWithValue("@Unidade", unidade);
                         cmd.Parameters.AddWithValue("@Quantidade", quantidade);
-                        cmd.Parameters.AddWithValue("@DataVencimento", dataVencimento);
+                        cmd.Parameters.AddWithValue("@DataVencimento", dataVencimentoDate);
                         cmd.Parameters.AddWithValue("@Observacao", observacao);
                         cmd.Parameters.AddWithValue("@DiasRestantes", diasRestantesValor);
                         cmd.Parameters.AddWithValue("@Codigo", codigo);
@@ -234,7 +234,7 @@ namespace Projeto
             }
         }
 
-        // Chama o método criado na classe Program, responsável por realizar o controle dos caracteres digitados no txbCodigoBarra / txbQuantidade. 
+        // Chama o método criado na classe Program, responsável por realizar o controle dos caracteres digitados no "txbCodigoBarra" e "txbQuantidade". 
 
         private void TxbCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
         {

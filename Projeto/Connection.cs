@@ -10,13 +10,17 @@ namespace Projeto
 {
     internal class Connection : IDisposable
     {
-        private SqlConnection con; // Declaração de uma variável para a conexão com o banco de dados.
-        private readonly string DataBase = "MyDatabase"; // Nome do banco de dados a ser utilizado.
-        private bool disposed = false; // Variável de controle para rastrear se o objeto já foi liberado.
+        // Declaração de uma variável para a conexão com o banco de dados. Nome do banco de dados a ser utilizado.
+        // Variável de controle para rastrear se o objeto já foi liberado.
+
+        private SqlConnection con; 
+        private readonly string DataBase = "MyDatabase"; 
+        private bool disposed = false; 
 
         public Connection()
         {
-            con = new SqlConnection(BuildConnectionString()); // Inicializa a conexão utilizando a string de conexão criada no método BuildConnectionString.
+            // Inicializa a conexão utilizando a string de conexão criada no método BuildConnectionString.
+            con = new SqlConnection(BuildConnectionString()); 
         }
 
         private string BuildConnectionString()
@@ -29,16 +33,20 @@ namespace Projeto
         {
             if (con.State != System.Data.ConnectionState.Open)
             {
-                con.Open(); // Abre a conexão com o banco de dados se ela não estiver aberta.
+                // Abre a conexão com o banco de dados se ela não estiver aberta.
+                con.Open(); 
             }
-            return con; // Retorna a conexão (aberta ou já existente).
+
+            // Retorna a conexão (aberta ou já existente).
+            return con; 
         }
 
         public void CloseConnection()
         {
             if (con.State == System.Data.ConnectionState.Open)
             {
-                con.Close(); // Fecha a conexão com o banco de dados se estiver aberta.
+                // Fecha a conexão com o banco de dados se estiver aberta.
+                con.Close(); 
             }
         }
 
@@ -56,17 +64,23 @@ namespace Projeto
                 {
                     if (con != null)
                     {
-                        con.Dispose(); // Libera os recursos da conexão com o banco de dados.
-                        con = null; // Define a conexão como nula para evitar uso posterior.
+                        // Libera os recursos da conexão com o banco de dados.
+                        con.Dispose();
+
+                        // Define a conexão como nula para evitar uso posterior.
+                        con = null; 
                     }
                 }
-                disposed = true; // Marca o objeto como liberado.
+
+                // Marca o objeto como liberado.
+                disposed = true; 
             }
         }
 
         internal SqlConnection ReturnConnection()
         {
-            return new SqlConnection(BuildConnectionString()); // Cria e retorna uma nova instância de SqlConnection com a string de conexão.
+            // Cria e retorna uma nova instância de SqlConnection com a string de conexão.
+            return new SqlConnection(BuildConnectionString()); 
         }
     }
 }

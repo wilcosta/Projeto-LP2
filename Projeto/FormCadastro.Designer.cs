@@ -87,6 +87,7 @@
             // 
             this.txbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDescricao.Location = new System.Drawing.Point(147, 43);
+            this.txbDescricao.MaxLength = 350;
             this.txbDescricao.Name = "txbDescricao";
             this.txbDescricao.Size = new System.Drawing.Size(337, 26);
             this.txbDescricao.TabIndex = 0;
@@ -105,6 +106,7 @@
             // 
             this.txbQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbQuantidade.Location = new System.Drawing.Point(381, 136);
+            this.txbQuantidade.MaxLength = 10;
             this.txbQuantidade.Name = "txbQuantidade";
             this.txbQuantidade.Size = new System.Drawing.Size(103, 26);
             this.txbQuantidade.TabIndex = 3;
@@ -154,6 +156,7 @@
             // 
             this.txbObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbObservacao.Location = new System.Drawing.Point(109, 228);
+            this.txbObservacao.MaxLength = 250;
             this.txbObservacao.Name = "txbObservacao";
             this.txbObservacao.Size = new System.Drawing.Size(375, 26);
             this.txbObservacao.TabIndex = 5;

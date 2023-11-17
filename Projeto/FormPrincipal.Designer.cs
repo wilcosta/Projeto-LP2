@@ -104,18 +104,18 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Código";
-            this.columnHeader1.Width = 75;
+            this.columnHeader1.Width = 65;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Descrição";
-            this.columnHeader2.Width = 350;
+            this.columnHeader2.Width = 400;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Código de Barras";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 135;
             // 
             // columnHeader4
             // 
@@ -133,18 +133,18 @@
             // 
             this.columnHeader6.Text = "Vencimento";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 120;
+            this.columnHeader6.Width = 100;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Dias Restantes";
             this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 140;
+            this.columnHeader7.Width = 125;
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Observação";
-            this.columnHeader8.Width = 270;
+            this.columnHeader8.Width = 275;
             // 
             // btnBuscar
             // 
@@ -176,6 +176,7 @@
             // 
             this.txbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbBuscar.Location = new System.Drawing.Point(871, 58);
+            this.txbBuscar.MaxLength = 50;
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(309, 29);
             this.txbBuscar.TabIndex = 23;

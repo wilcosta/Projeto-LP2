@@ -25,8 +25,8 @@ namespace Projeto
         }
 
         // Recupera os dados de uma tabela do banco de dados e os exibe na ListView. Primeiro, ele limpa a ListView. Em seguida, ele conecta-se ao banco
-        // de dados e executa uma consulta SQL para obter os dados. Depois, ele percorre os resultados da consulta e cria um item da ListView para cada
-        // linha. Por fim, ele adiciona os itens da consulta à ListView. Também é tratado eventuais erros que possam ocorrer durante este processo.
+        // de dados e executa uma consulta SQL para obter os dados. Depois, ele percorre os resultados da consulta e cria um item da ListView para cada linha.
+        // Por fim, ele adiciona os itens da consulta à ListView. Também é tratado eventuais erros que possam ocorrer durante este processo.
 
         public void AtualizarListView()
         {
@@ -66,7 +66,7 @@ namespace Projeto
             }
         }
 
-        // Se o usuário clicar no link "logoff", esse código fecha a tela principal e abre novamentente a tela de "Login",
+        // Se o usuário clicar no link "logoff", esse método fecha a tela principal e abre novamentente a tela de "Login",
         // permitindo assim a troca de usuário, por exemplo.
 
         private void LnkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -85,8 +85,8 @@ namespace Projeto
             formCad.ShowDialog();
         }
 
-        // Este código será executado toda vez que o usuário clicar duas vezes em um item da ListView. O código verifica se o item está
-        // selecionado. Se o item estiver selecionado, o código ativa os botões "Editar" e "Excluir", permitindo tais funcionalidades.
+        // Este código será executado toda vez que o usuário clicar duas vezes em um item da ListView. O código verifica se o item está selecionado.
+        // Se o item estiver selecionado, o código ativa os botões "Editar" e "Excluir", permitindo tais funcionalidades.
 
         private void LtvFormPrincipal_MouseDoubleClick(object sender, MouseEventArgs e)
         {
