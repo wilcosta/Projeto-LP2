@@ -45,7 +45,7 @@
             this.lblSaudacao = new System.Windows.Forms.Label();
             this.lnkLabel = new System.Windows.Forms.LinkLabel();
             this.tblLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRegistrarBaixa = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tblLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -229,14 +229,15 @@
             this.tblLayoutPanel.Size = new System.Drawing.Size(308, 21);
             this.tblLayoutPanel.TabIndex = 26;
             // 
-            // button1
+            // btnRegistrarBaixa
             // 
-            this.button1.Location = new System.Drawing.Point(1029, 654);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 35);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Registrar Baixa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegistrarBaixa.Location = new System.Drawing.Point(1029, 654);
+            this.btnRegistrarBaixa.Name = "btnRegistrarBaixa";
+            this.btnRegistrarBaixa.Size = new System.Drawing.Size(150, 35);
+            this.btnRegistrarBaixa.TabIndex = 27;
+            this.btnRegistrarBaixa.Text = "Registrar Baixa";
+            this.btnRegistrarBaixa.UseVisualStyleBackColor = true;
+            this.btnRegistrarBaixa.Click += new System.EventHandler(this.BtnRegistrarBaixa_Click);
             // 
             // button2
             // 
@@ -253,7 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRegistrarBaixa);
             this.Controls.Add(this.tblLayoutPanel);
             this.Controls.Add(this.txbBuscar);
             this.Controls.Add(this.BtnCadastrar);
@@ -291,7 +292,7 @@
         private System.Windows.Forms.Label lblSaudacao;
         private System.Windows.Forms.LinkLabel lnkLabel;
         private System.Windows.Forms.TableLayoutPanel tblLayoutPanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegistrarBaixa;
         private System.Windows.Forms.Button button2;
     }
 }

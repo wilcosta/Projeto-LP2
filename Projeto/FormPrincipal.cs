@@ -247,5 +247,11 @@ namespace Projeto
                 BtnBuscar_Click(sender, e);
             }
         }
+
+        private void BtnRegistrarBaixa_Click(object sender, EventArgs e)
+        {
+            FormRegistrarBaixa formBaixa = new FormRegistrarBaixa();
+            formBaixa.ShowDialog();
+        }
     }
 }
