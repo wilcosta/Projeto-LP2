@@ -240,6 +240,7 @@
             this.Name = "FormRegistrarBaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Baixa";
+            this.Load += new System.EventHandler(this.FormRegistrarBaixa_Load);
             this.gpbSelecionar.ResumeLayout(false);
             this.gpbSelecionar.PerformLayout();
             this.gpbSelecionado.ResumeLayout(false);
