@@ -1,6 +1,6 @@
 ﻿namespace Projeto
 {
-    partial class FormCadastro
+    partial class FormCadastroProdutos
     {
         /// <summary>
         /// Required designer variable.
@@ -191,7 +191,7 @@
             this.mtbDataVencimento.TabIndex = 4;
             this.mtbDataVencimento.ValidatingType = typeof(System.DateTime);
             // 
-            // FormCadastro
+            // FormCadastroProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,9 +212,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormCadastro";
+            this.Name = "FormCadastroProdutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastrar Produtos";
+            this.Text = "Cadastro de Produtos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

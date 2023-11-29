@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Projeto
 {
-    public partial class FormCadastro : Form
+    public partial class FormCadastroProdutos : Form
     {
         // Variáveis usadas para acessar os dados do banco de dados e a tela principal.
 		
@@ -15,7 +15,7 @@ namespace Projeto
 
 		// Inicializa os componentes da tela FormCadastro e armazena uma referência à tela principal na variável formPrincipal.
 
-        public FormCadastro(FormPrincipal principalForm)
+        public FormCadastroProdutos(FormPrincipal principalForm)
         {
             InitializeComponent();
             this.formPrincipal = principalForm;
@@ -24,7 +24,7 @@ namespace Projeto
         // Inicializa os componentes da tela FormCadastro e após verificar se o "código" do produto não é vazio, as linhas de códigos seguintes 
         // preenchem os campos com as informações fornecidas nos parâmetros. A última linha altera o texto do botão "Incluir" para "Salvar".
 
-        public FormCadastro(FormPrincipal principalForm, string codigo, string descricao, string codigoBarra, string unidade, string quantidade, string dataVencimento, string observacao)
+        public FormCadastroProdutos(FormPrincipal principalForm, string codigo, string descricao, string codigoBarra, string unidade, string quantidade, string dataVencimento, string observacao)
         {
             InitializeComponent();
             this.formPrincipal = principalForm;

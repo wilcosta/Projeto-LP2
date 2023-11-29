@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExcluir = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
+            this.btnApagar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.ltvFormPrincipal = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,21 +48,23 @@
             this.tblLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.btnRegistrarBaixa = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tblLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnExcluir
+            // btnApagar
             // 
-            this.btnExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(13, 654);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(150, 35);
-            this.btnExcluir.TabIndex = 11;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
+            this.btnApagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagar.Location = new System.Drawing.Point(13, 654);
+            this.btnApagar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(150, 35);
+            this.btnApagar.TabIndex = 11;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.BtnExcluir_Click);
             // 
             // btnEditar
             // 
@@ -151,7 +154,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(1187, 53);
+            this.btnBuscar.Location = new System.Drawing.Point(1187, 55);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(150, 35);
@@ -165,7 +168,7 @@
             // 
             this.BtnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadastrar.Location = new System.Drawing.Point(1187, 654);
+            this.BtnCadastrar.Location = new System.Drawing.Point(872, 652);
             this.BtnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCadastrar.Name = "BtnCadastrar";
             this.BtnCadastrar.Size = new System.Drawing.Size(150, 35);
@@ -177,7 +180,7 @@
             // txbBuscar
             // 
             this.txbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(871, 58);
+            this.txbBuscar.Location = new System.Drawing.Point(870, 61);
             this.txbBuscar.MaxLength = 50;
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(309, 29);
@@ -231,7 +234,7 @@
             // 
             // btnRegistrarBaixa
             // 
-            this.btnRegistrarBaixa.Location = new System.Drawing.Point(1029, 654);
+            this.btnRegistrarBaixa.Location = new System.Drawing.Point(1029, 652);
             this.btnRegistrarBaixa.Name = "btnRegistrarBaixa";
             this.btnRegistrarBaixa.Size = new System.Drawing.Size(150, 35);
             this.btnRegistrarBaixa.TabIndex = 27;
@@ -241,18 +244,29 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(871, 654);
+            this.button2.Location = new System.Drawing.Point(1187, 652);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 35);
             this.button2.TabIndex = 28;
             this.button2.Text = "Gerenciar";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 65);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(220, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnRegistrarBaixa);
             this.Controls.Add(this.tblLayoutPanel);
@@ -260,22 +274,23 @@
             this.Controls.Add(this.BtnCadastrar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.ltvFormPrincipal);
-            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnEditar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Controle de Validades";
+            this.Text = "Painel Principal - Controle de Validades";
             this.tblLayoutPanel.ResumeLayout(false);
             this.tblLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.ListView ltvFormPrincipal;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -294,5 +309,6 @@
         private System.Windows.Forms.TableLayoutPanel tblLayoutPanel;
         private System.Windows.Forms.Button btnRegistrarBaixa;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

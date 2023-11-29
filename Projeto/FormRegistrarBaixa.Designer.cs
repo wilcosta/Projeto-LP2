@@ -62,6 +62,7 @@
             this.btnRemover.TabIndex = 6;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.BtnRemover_Click);
             // 
             // ltvRegBaixaSelecionar
             // 
@@ -157,6 +158,7 @@
             this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
             // 
             // ltvRegBaixaSelecionado
             // 
@@ -239,7 +241,7 @@
             this.Controls.Add(this.gpbSelecionado);
             this.Name = "FormRegistrarBaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registrar Baixa";
+            this.Text = "Registro de Baixa";
             this.Load += new System.EventHandler(this.FormRegistrarBaixa_Load);
             this.gpbSelecionar.ResumeLayout(false);
             this.gpbSelecionar.PerformLayout();

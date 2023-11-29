@@ -19,7 +19,7 @@ namespace Projeto
             InitializeComponent();
             AtualizarListView();
             btnEditar.Enabled = false;
-            btnExcluir.Enabled = false;
+            btnApagar.Enabled = false;
             lblSaudacao.Text = "Olá, " + nomeDoUsuario + " seja bem-vindo(a)!";
             txbBuscar.KeyUp += new KeyEventHandler(BtnBuscar_KeyUp);
         }
@@ -81,7 +81,7 @@ namespace Projeto
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            FormCadastro formCad = new FormCadastro(this);
+            FormCadastroProdutos formCad = new FormCadastroProdutos(this);
             formCad.ShowDialog();
         }
 
@@ -93,7 +93,7 @@ namespace Projeto
             if (ltvFormPrincipal.SelectedItems.Count > 0)
             {
                 btnEditar.Enabled = true;
-                btnExcluir.Enabled = true;
+                btnApagar.Enabled = true;
             }
         }
 
@@ -115,12 +115,12 @@ namespace Projeto
                 string dataVencimento = selectedItem.SubItems[5].Text;
                 string observacao = selectedItem.SubItems[7].Text;
 
-                FormCadastro formEditar = new FormCadastro(this, codigo, descricao, codigoBarra, unidade, quantidade, dataVencimento, observacao);
+                FormCadastroProdutos formEditar = new FormCadastroProdutos(this, codigo, descricao, codigoBarra, unidade, quantidade, dataVencimento, observacao);
                 
                 formEditar.ShowDialog();
                 
                 btnEditar.Enabled = false;
-                btnExcluir.Enabled = false;
+                btnApagar.Enabled = false;
             }
         }
 
@@ -158,7 +158,7 @@ namespace Projeto
                                     {
                                         AtualizarListView();
 
-                                        btnExcluir.Enabled = false;
+                                        btnApagar.Enabled = false;
                                         btnEditar.Enabled = false;
                                     }
                                     else
@@ -176,7 +176,7 @@ namespace Projeto
                 }
                 else
                 {
-                    btnExcluir.Enabled = false;
+                    btnApagar.Enabled = false;
                     btnEditar.Enabled = false;
                 }
             }
@@ -194,7 +194,7 @@ namespace Projeto
 
                 if (item == null)
                 {
-                    btnExcluir.Enabled = false;
+                    btnApagar.Enabled = false;
                     btnEditar.Enabled = false;
                 }
             }
@@ -231,7 +231,7 @@ namespace Projeto
             }
 
             btnEditar.Enabled = false;
-            btnExcluir.Enabled = false;
+            btnApagar.Enabled = false;
 
             txbBuscar.Text = "";
         }

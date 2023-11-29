@@ -60,5 +60,123 @@ namespace Projeto
         {
             CarregarDados();
         }
+
+        private void BtnAdicionar_Click(object sender, EventArgs e)
+        {
+            List<int> selectedIndices = new List<int>();
+
+            for (int i = 0; i < ltvRegBaixaSelecionar.Items.Count; i++)
+            {
+                if (ltvRegBaixaSelecionar.Items[i].Checked)
+                {
+                    selectedIndices.Add(i);
+                }
+            }
+
+            if (selectedIndices.Count == 0)
+            {
+                MessageBox.Show("Selecione um item para adicionar à lista.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            for (int i = selectedIndices.Count - 1; i >= 0; i--)
+            {
+                ListViewItem selectedItem = ltvRegBaixaSelecionar.Items[selectedIndices[i]];
+
+                bool itemExists = false;
+                foreach (ListViewItem item in ltvRegBaixaSelecionado.Items)
+                {
+                    if (item.SubItems[1].Text == selectedItem.SubItems[1].Text)
+                    {
+                        itemExists = true;
+                        break;
+                    }
+                }
+
+                if (!itemExists)
+                {
+                    ListViewItem newItem = new ListViewItem("");
+                    newItem.SubItems.Add(selectedItem.SubItems[1].Text);
+                    newItem.SubItems.Add(selectedItem.SubItems[2].Text);
+                    newItem.SubItems.Add(selectedItem.SubItems[3].Text);
+
+                    TextBox quantidadeTextBox = new TextBox
+                    {
+                        Width = ltvRegBaixaSelecionado.Columns[4].Width,
+                        Tag = newItem
+                    };
+                    quantidadeTextBox.TextChanged += QuantidadeTextBox_TextChanged;
+
+                    newItem.SubItems.Add(quantidadeTextBox.Text);
+                    ltvRegBaixaSelecionado.Items.Add(newItem);
+                    ltvRegBaixaSelecionado.Controls.Add(quantidadeTextBox);
+                    quantidadeTextBox.Bounds = newItem.SubItems[4].Bounds;
+
+                    selectedItem.Checked = false;
+                }
+                else
+                {
+                    MessageBox.Show("Este item já foi adicionado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void QuantidadeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+            ListViewItem item = (ListViewItem)textBox.Tag;
+            item.SubItems[4].Text = textBox.Text;
+        }
+
+        private void BtnRemover_Click(object sender, EventArgs e)
+        {
+            List<int> selectedIndices = new List<int>();
+
+            for (int i = ltvRegBaixaSelecionado.Items.Count - 1; i >= 0; i--)
+            {
+                if (ltvRegBaixaSelecionado.Items[i].Checked)
+                {
+                    selectedIndices.Add(i);
+                }
+            }
+
+            if (selectedIndices.Count == 0)
+            {
+                MessageBox.Show("Selecione um item para remover da lista.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            foreach (int selectedIndex in selectedIndices)
+            {
+                ltvRegBaixaSelecionado.Items.RemoveAt(selectedIndex);
+            }
+
+            List<Control> controlsToRemove = new List<Control>();
+            foreach (Control control in ltvRegBaixaSelecionado.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    bool associatedItem = false;
+                    foreach (ListViewItem item in ltvRegBaixaSelecionado.Items)
+                    {
+                        if (item.Tag == textBox)
+                        {
+                            associatedItem = true;
+                            break;
+                        }
+                    }
+
+                    if (!associatedItem)
+                    {
+                        controlsToRemove.Add(textBox);
+                    }
+                }
+            }
+
+            foreach (Control control in controlsToRemove)
+            {
+                ltvRegBaixaSelecionado.Controls.Remove(control);
+            }
+        }
     }
 }
