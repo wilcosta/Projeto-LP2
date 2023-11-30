@@ -99,23 +99,23 @@ namespace Projeto
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Dados inseridos com sucesso!");
+                            MessageBox.Show("Dados inseridos com sucesso!", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LimparCampos();
                             formPrincipal.AtualizarListView();
                         }
                         else
                         {
-                            MessageBox.Show("Nenhum dado foi inserido. Verifique os valores e tente novamente.");
+                            MessageBox.Show("Nenhum dado foi inserido. Verifique os valores e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (FormatException err)
                 {
-                    MessageBox.Show("A data de vencimento não está em um formato válido. " + err.Message);
+                    MessageBox.Show("A data de vencimento não está em um formato válido. " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception err)
                 {
-                    MessageBox.Show("Erro ao inserir dados: " + err.Message);
+                    MessageBox.Show("Erro ao inserir dados: " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (buttonText == "Salvar")
@@ -158,23 +158,23 @@ namespace Projeto
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Dados atualizados com sucesso!");
+                            MessageBox.Show("Dados atualizados com sucesso!", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             formPrincipal.AtualizarListView();
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Nenhum dado foi atualizado. Verifique os valores e tente novamente.");
+                            MessageBox.Show("Nenhum dado foi atualizado. Verifique os valores e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("A data de vencimento não está em um formato válido.");
+                    MessageBox.Show("A data de vencimento não está em um formato válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception err)
                 {
-                    MessageBox.Show("Erro ao atualizar dados: " + err.Message);
+                    MessageBox.Show("Erro ao atualizar dados: " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

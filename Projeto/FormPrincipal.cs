@@ -137,7 +137,7 @@ namespace Projeto
                                 
                 string codigo = selectedItem.SubItems[0].Text;
                                 
-                DialogResult result = MessageBox.Show("Tem certeza que deseja excluir o item selecionado?", "Confirmação de exclusão", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Tem certeza que deseja excluir o item selecionado?", "Confirmação de exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -163,7 +163,7 @@ namespace Projeto
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Nenhum item foi excluído. Verifique os valores e tente novamente.");
+                                        MessageBox.Show("Nenhum item foi excluído. Verifique os valores e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
                             }
