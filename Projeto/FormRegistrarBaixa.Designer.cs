@@ -146,6 +146,8 @@
             this.btnPesquisar.TabIndex = 2;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            this.btnPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BtnPesquisar_KeyUp);
             // 
             // btnAdicionar
             // 
@@ -202,6 +204,7 @@
             this.bntConfirmar.TabIndex = 7;
             this.bntConfirmar.Text = "Confirmar";
             this.bntConfirmar.UseVisualStyleBackColor = true;
+            this.bntConfirmar.Click += new System.EventHandler(this.BntConfirmar_Click);
             // 
             // gpbSelecionar
             // 

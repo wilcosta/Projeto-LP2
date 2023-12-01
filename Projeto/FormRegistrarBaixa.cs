@@ -178,5 +178,53 @@ namespace Projeto
                 ltvRegBaixaSelecionado.Controls.Remove(control);
             }
         }
+
+        private void BtnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termoDeBusca = txbPesquisa.Text.ToLower();
+
+            if (string.IsNullOrEmpty(termoDeBusca))
+            {
+                CarregarDados();
+            }
+            else
+            {
+                foreach (ListViewItem item in ltvRegBaixaSelecionar.Items)
+                {
+                    bool encontrado = false;
+                    foreach (ListViewItem.ListViewSubItem subItem in item.SubItems)
+                    {
+                        if (subItem.Text.ToLower().Contains(termoDeBusca))
+                        {
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                    item.Selected = encontrado;
+                }
+            }
+
+            txbPesquisa.Text = "";
+        }
+
+        private void BtnPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+
+
+
+
+        }
+
+
+        private void BntConfirmar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+
     }
 }

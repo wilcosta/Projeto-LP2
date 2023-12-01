@@ -100,7 +100,7 @@
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Autenticação";
+            this.Text = "Identificação do Usuário";
             this.ResumeLayout(false);
             this.PerformLayout();
 
