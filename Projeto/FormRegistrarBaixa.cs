@@ -208,23 +208,100 @@ namespace Projeto
             txbPesquisa.Text = "";
         }
 
-        private void BtnPesquisar_KeyUp(object sender, KeyEventArgs e)
-        {
-
-
-
-
-        }
-
 
         private void BntConfirmar_Click(object sender, EventArgs e)
         {
+            using (Connection connection = new Connection())
+            {
+                using (SqlConnection con = connection.OpenConnection())
+                {
+                    using (SqlTransaction transaction = con.BeginTransaction())
+                    {
+                        List<Control> textBoxesToRemove = new List<Control>();
+                        List<ListViewItem> itemsToRemove = new List<ListViewItem>();
+                        bool sucesso = true;
 
+                        try
+                        {
+                            foreach (ListViewItem item in ltvRegBaixaSelecionado.Items)
+                            {
+                                string codigoItem = item.SubItems[1].Text;
+                                int quantidadeRequerida = int.Parse(item.SubItems[4].Text);
 
+                                string query = "SELECT Quantidade FROM tbl_ControleVenc WHERE Codigo = @Codigo";
+                                using (SqlCommand command = new SqlCommand(query, con, transaction))
+                                {
+                                    command.Parameters.AddWithValue("@Codigo", codigoItem);
+                                    SqlDataReader reader = command.ExecuteReader();
 
+                                    if (reader.Read())
+                                    {
+                                        int quantidadeEmEstoque = (int)reader["Quantidade"];
 
+                                        if (quantidadeRequerida <= quantidadeEmEstoque)
+                                        {
+                                            int novaQuantidadeEmEstoque = quantidadeEmEstoque - quantidadeRequerida;
+                                            reader.Close();
+
+                                            query = "UPDATE tbl_ControleVenc SET Quantidade = @NovaQuantidade WHERE Codigo = @Codigo";
+                                            using (SqlCommand updateCommand = new SqlCommand(query, con, transaction))
+                                            {
+                                                updateCommand.Parameters.AddWithValue("@NovaQuantidade", novaQuantidadeEmEstoque);
+                                                updateCommand.Parameters.AddWithValue("@Codigo", codigoItem);
+                                                updateCommand.ExecuteNonQuery();
+                                            }
+
+                                            foreach (Control control in ltvRegBaixaSelecionado.Controls)
+                                            {
+                                                if (control is TextBox textBox)
+                                                {
+                                                    if (textBox.Tag == item)
+                                                    {
+                                                        textBoxesToRemove.Add(textBox);
+                                                    }
+                                                }
+                                            }
+
+                                            itemsToRemove.Add(item);
+                                        }
+                                        else
+                                        {
+                                            sucesso = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
+                            foreach (Control textBox in textBoxesToRemove)
+                            {
+                                ltvRegBaixaSelecionado.Controls.Remove(textBox);
+                            }
+
+                            foreach (ListViewItem item in itemsToRemove)
+                            {
+                                ltvRegBaixaSelecionado.Items.Remove(item);
+                            }
+
+                            if (sucesso)
+                            {
+                                transaction.Commit();
+                                MessageBox.Show("Operação realizada com sucesso.", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                transaction.Rollback();
+                                MessageBox.Show("A quantidade requerida é maior do que a quantidade em estoque de pelo menos um item.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("Erro ao confirmar a baixa: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
         }
-
-
     }
 }

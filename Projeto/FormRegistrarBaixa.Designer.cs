@@ -76,6 +76,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.ltvRegBaixaSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ltvRegBaixaSelecionar.FullRowSelect = true;
             this.ltvRegBaixaSelecionar.GridLines = true;
             this.ltvRegBaixaSelecionar.HideSelection = false;
             this.ltvRegBaixaSelecionar.Location = new System.Drawing.Point(16, 70);
@@ -147,7 +148,6 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            this.btnPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.BtnPesquisar_KeyUp);
             // 
             // btnAdicionar
             // 
