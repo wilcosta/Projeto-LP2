@@ -81,7 +81,7 @@ namespace Projeto
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            FormCadastroProdutos formCad = new FormCadastroProdutos(this);
+            FormCadastrarProdutos formCad = new FormCadastrarProdutos(this);
             formCad.ShowDialog();
         }
 
@@ -115,7 +115,7 @@ namespace Projeto
                 string dataVencimento = selectedItem.SubItems[5].Text;
                 string observacao = selectedItem.SubItems[7].Text;
 
-                FormCadastroProdutos formEditar = new FormCadastroProdutos(this, codigo, descricao, codigoBarra, unidade, quantidade, dataVencimento, observacao);
+                FormCadastrarProdutos formEditar = new FormCadastrarProdutos(this, codigo, descricao, codigoBarra, unidade, quantidade, dataVencimento, observacao);
                 
                 formEditar.ShowDialog();
                 
@@ -252,6 +252,12 @@ namespace Projeto
         {
             FormRegistrarBaixa formBaixa = new FormRegistrarBaixa();
             formBaixa.ShowDialog();
+        }
+
+        private void BtnGerenciar_Click(object sender, EventArgs e)
+        {
+            FormGerenciar formGestao = new FormGerenciar();
+            formGestao.ShowDialog();
         }
     }
 }

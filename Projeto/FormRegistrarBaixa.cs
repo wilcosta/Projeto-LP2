@@ -61,6 +61,11 @@ namespace Projeto
             CarregarDados();
         }
 
+        private void FormRegistrarBaixa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            connection.CloseConnection();
+        }
+
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
             List<int> selectedIndices = new List<int>();
@@ -208,6 +213,13 @@ namespace Projeto
             txbPesquisa.Text = "";
         }
 
+        private void TxbPesquisa_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BtnPesquisar_Click(sender, e);
+            }
+        }
 
         private void BntConfirmar_Click(object sender, EventArgs e)
         {

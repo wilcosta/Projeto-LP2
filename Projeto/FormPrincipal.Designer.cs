@@ -47,7 +47,7 @@
             this.lnkLabel = new System.Windows.Forms.LinkLabel();
             this.tblLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.btnRegistrarBaixa = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnGerenciar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tblLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -242,14 +242,15 @@
             this.btnRegistrarBaixa.UseVisualStyleBackColor = true;
             this.btnRegistrarBaixa.Click += new System.EventHandler(this.BtnRegistrarBaixa_Click);
             // 
-            // button2
+            // btnGerenciar
             // 
-            this.button2.Location = new System.Drawing.Point(1187, 652);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 35);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Gerenciar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnGerenciar.Location = new System.Drawing.Point(1187, 652);
+            this.btnGerenciar.Name = "btnGerenciar";
+            this.btnGerenciar.Size = new System.Drawing.Size(150, 35);
+            this.btnGerenciar.TabIndex = 28;
+            this.btnGerenciar.Text = "Gerenciar";
+            this.btnGerenciar.UseVisualStyleBackColor = true;
+            this.btnGerenciar.Click += new System.EventHandler(this.BtnGerenciar_Click);
             // 
             // pictureBox1
             // 
@@ -267,7 +268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnGerenciar);
             this.Controls.Add(this.btnRegistrarBaixa);
             this.Controls.Add(this.tblLayoutPanel);
             this.Controls.Add(this.txbBuscar);
@@ -308,7 +309,7 @@
         private System.Windows.Forms.LinkLabel lnkLabel;
         private System.Windows.Forms.TableLayoutPanel tblLayoutPanel;
         private System.Windows.Forms.Button btnRegistrarBaixa;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGerenciar;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

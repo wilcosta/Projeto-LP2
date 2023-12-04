@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Projeto
 {
-    internal class Connection : IDisposable
+    public class Connection : IDisposable
     {
         // Declaração de uma variável para a conexão com o banco de dados. Nome do banco de dados a ser utilizado.
         // Variável de controle para rastrear se o objeto já foi liberado.

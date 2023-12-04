@@ -192,6 +192,7 @@
             this.txbPesquisa.Name = "txbPesquisa";
             this.txbPesquisa.Size = new System.Drawing.Size(309, 26);
             this.txbPesquisa.TabIndex = 1;
+            this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxbPesquisa_KeyUp);
             // 
             // bntConfirmar
             // 
@@ -242,9 +243,13 @@
             this.ClientSize = new System.Drawing.Size(809, 721);
             this.Controls.Add(this.gpbSelecionar);
             this.Controls.Add(this.gpbSelecionado);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormRegistrarBaixa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Baixa";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRegistrarBaixa_FormClosing);
             this.Load += new System.EventHandler(this.FormRegistrarBaixa_Load);
             this.gpbSelecionar.ResumeLayout(false);
             this.gpbSelecionar.PerformLayout();

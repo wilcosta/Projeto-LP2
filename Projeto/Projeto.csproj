@@ -47,11 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
-    <Compile Include="FormCadastroProdutos.cs">
+    <Compile Include="FormCadastrarUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastroProdutos.Designer.cs">
-      <DependentUpon>FormCadastroProdutos.cs</DependentUpon>
+    <Compile Include="FormCadastrarUsuarios.Designer.cs">
+      <DependentUpon>FormCadastrarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastrarProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarProdutos.Designer.cs">
+      <DependentUpon>FormCadastrarProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGerenciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGerenciar.Designer.cs">
+      <DependentUpon>FormGerenciar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -74,8 +86,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.cs" />
-    <EmbeddedResource Include="FormCadastroProdutos.resx">
-      <DependentUpon>FormCadastroProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="FormCadastrarProdutos.resx">
+      <DependentUpon>FormCadastrarProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrarUsuarios.resx">
+      <DependentUpon>FormCadastrarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGerenciar.resx">
+      <DependentUpon>FormGerenciar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
