@@ -34,9 +34,9 @@ namespace Projeto
             {
                 // Verifica se o usuário já existe
                 using (SqlConnection con = connection.ReturnConnection())
-                using (SqlCommand cmdVerificar = new SqlCommand("SELECT COUNT(*) FROM tbl_Login WHERE UserName=@UserName", con))
+                using (SqlCommand cmdVerificar = new SqlCommand("SELECT COUNT(*) FROM tbl_Login WHERE UserName=@username", con))
                 {
-                    cmdVerificar.Parameters.AddWithValue("@UserName", txbNome.Text);
+                    cmdVerificar.Parameters.AddWithValue("@username", txbNome.Text);
                     con.Open();
                     int usuarioExistente = (int)cmdVerificar.ExecuteScalar();
 
@@ -52,10 +52,10 @@ namespace Projeto
                 string senhaCriptografada = CriptografarSHA256(txbSenha.Text);
 
                 using (SqlConnection con = connection.ReturnConnection())
-                using (SqlCommand cmdInserir = new SqlCommand("INSERT INTO tbl_Login (UserName, Password) VALUES (@UserName, @Password)", con))
+                using (SqlCommand cmdInserir = new SqlCommand("INSERT INTO tbl_Login (username, password) VALUES (@username, @password)", con))
                 {
-                    cmdInserir.Parameters.AddWithValue("@UserName", nomeUsuarioCriptografado);
-                    cmdInserir.Parameters.AddWithValue("@Password", senhaCriptografada);
+                    cmdInserir.Parameters.AddWithValue("@username", nomeUsuarioCriptografado);
+                    cmdInserir.Parameters.AddWithValue("@password", senhaCriptografada);
 
                     con.Open();
                     cmdInserir.ExecuteNonQuery();

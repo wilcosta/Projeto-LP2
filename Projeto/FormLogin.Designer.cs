@@ -59,7 +59,7 @@
             // 
             this.txbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNome.Location = new System.Drawing.Point(115, 68);
-            this.txbNome.MaxLength = 30;
+            this.txbNome.MaxLength = 50;
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(235, 26);
             this.txbNome.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.txbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.Location = new System.Drawing.Point(115, 117);
-            this.txbSenha.MaxLength = 30;
+            this.txbSenha.MaxLength = 50;
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.Size = new System.Drawing.Size(235, 26);
             this.txbSenha.TabIndex = 3;
