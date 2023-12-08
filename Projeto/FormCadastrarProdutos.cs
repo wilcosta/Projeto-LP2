@@ -25,22 +25,17 @@ namespace Projeto
         // preenchem os campos com as informações fornecidas nos parâmetros. A última linha altera o texto do botão "Incluir" para "Salvar".
 
         public FormCadastrarProdutos(FormPrincipal principalForm, string codigo, string descricao, string codigoBarra, string unidade, string quantidade, string dataVencimento, string observacao)
+            : this(principalForm)
         {
-            InitializeComponent();
-            this.formPrincipal = principalForm;
+            this.codigo = codigo;
+            txbDescricao.Text = descricao;
+            txbCodigoBarra.Text = codigoBarra;
+            cmbUnidade.Text = unidade;
+            txbQuantidade.Text = quantidade;
+            mtbDataVencimento.Text = dataVencimento;
+            txbObservacao.Text = observacao;
 
-            if (!string.IsNullOrEmpty(codigo))
-            {
-                this.codigo = codigo; 
-                txbDescricao.Text = descricao;
-                txbCodigoBarra.Text = codigoBarra;
-                cmbUnidade.Text = unidade;
-                txbQuantidade.Text = quantidade;
-                mtbDataVencimento.Text = dataVencimento;
-                txbObservacao.Text = observacao;
-
-                BtnIncluir.Text = "Salvar";
-            }
+            BtnIncluir.Text = "Salvar";
         }
 
         // Tem a funcionalidade de gerenciar a inclusão e atualização de informações no banco de dados a partir dos valores fornecidos nos campos do formulário. 
@@ -57,130 +52,73 @@ namespace Projeto
                 return;
             }
 
-            if (buttonText == "Incluir")
+            string descricao = txbDescricao.Text;
+            string codigoBarra = txbCodigoBarra.Text;
+            string unidade = cmbUnidade.Text;
+            string quantidade = txbQuantidade.Text;
+            string dataVencimento = mtbDataVencimento.Text;
+            string observacao = txbObservacao.Text;
+
+            if (string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(codigoBarra) || string.IsNullOrEmpty(unidade) || string.IsNullOrEmpty(quantidade) || string.IsNullOrEmpty(dataVencimento))
             {
-                string descricao = txbDescricao.Text;
-                string codigoBarra = txbCodigoBarra.Text;
-                string unidade = cmbUnidade.Text;
-                string quantidade = txbQuantidade.Text;
-                string dataVencimento = mtbDataVencimento.Text;
-                string observacao = txbObservacao.Text;
-
-                if (string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(codigoBarra) || string.IsNullOrEmpty(unidade) || string.IsNullOrEmpty(quantidade) || string.IsNullOrEmpty(dataVencimento))
-                {
-                    MessageBox.Show("Preencha todos os campos obrigatórios.");
-                    return;
-                }
-
-                  
-                try
-                {
-                    DateTime dataVencimentoDate = Convert.ToDateTime(dataVencimento);
-                    TimeSpan diasRestantes = dataVencimentoDate - DateTime.Now;
-                    int diasRestantesValor = (int)diasRestantes.TotalDays;
-
-                    string sql = "INSERT INTO tbl_ControleVenc (Descricao, CodigoBarra, Unidade, Quantidade, DataVencimento, Observacao, DiasRestantes) " +
-                        "VALUES (@Descricao, @CodigoBarra, @Unidade, @Quantidade, @DataVencimento, @Observacao, @DiasRestantes)";
-
-                    using (SqlConnection con = connection.ReturnConnection())
-                    using (SqlCommand cmd = new SqlCommand(sql, con))
-                    {
-                        cmd.Parameters.AddWithValue("@Descricao", descricao);
-                        cmd.Parameters.AddWithValue("@CodigoBarra", codigoBarra);
-                        cmd.Parameters.AddWithValue("@Unidade", unidade);
-                        cmd.Parameters.AddWithValue("@Quantidade", quantidade);
-                        cmd.Parameters.AddWithValue("@DataVencimento", dataVencimentoDate);
-                        cmd.Parameters.AddWithValue("@Observacao", observacao);
-                        cmd.Parameters.AddWithValue("@DiasRestantes", diasRestantesValor);
-                        cmd.Parameters.AddWithValue("@Codigo", DBNull.Value);
-
-                        con.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            MessageBox.Show("Dados inseridos com sucesso!", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LimparCampos();
-                            formPrincipal.AtualizarListView();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nenhum dado foi inserido. Verifique os valores e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                catch (FormatException err)
-                {
-                    MessageBox.Show("A data de vencimento não está em um formato válido. " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show("Erro ao inserir dados: " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Preencha todos os campos obrigatórios.");
+                return;
             }
-            else if (buttonText == "Salvar")
+
+            try
             {
-                string descricao = txbDescricao.Text;
-                string codigoBarra = txbCodigoBarra.Text;
-                string unidade = cmbUnidade.Text;
-                string quantidade = txbQuantidade.Text;
-                string dataVencimento = mtbDataVencimento.Text;
-                string observacao = txbObservacao.Text;
+                DateTime dtVencimento = Convert.ToDateTime(dataVencimento);
 
-                if (string.IsNullOrEmpty(descricao) || string.IsNullOrEmpty(codigoBarra) || string.IsNullOrEmpty(unidade) || string.IsNullOrEmpty(quantidade) || string.IsNullOrEmpty(dataVencimento))
+                string sql = buttonText == "Incluir"
+                    ? "INSERT INTO tbl_ControleVenc (Descricao, CodigoBarra, Unidade, Quantidade, DataVencimento, Observacao) VALUES (@Descricao, @CodigoBarra, @Unidade, @Quantidade, @DataVencimento, @Observacao)"
+                    : "UPDATE tbl_ControleVenc SET Descricao = @Descricao, CodigoBarra = @CodigoBarra, Unidade = @Unidade, Quantidade = @Quantidade, DataVencimento = @DataVencimento, Observacao = @Observacao WHERE Codigo = @Codigo";
+
+                using (SqlConnection con = connection.ReturnConnection())
+                using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios.");
-                    return;
-                }
+                    cmd.Parameters.AddWithValue("@Descricao", descricao);
+                    cmd.Parameters.AddWithValue("@CodigoBarra", codigoBarra);
+                    cmd.Parameters.AddWithValue("@Unidade", unidade);
+                    cmd.Parameters.AddWithValue("@Quantidade", quantidade);
+                    cmd.Parameters.AddWithValue("@DataVencimento", dtVencimento);
+                    cmd.Parameters.AddWithValue("@Observacao", observacao);
 
-                try
-                {
-                    DateTime dataVencimentoDate = DateTime.Parse(dataVencimento);
-                    TimeSpan diasRestantes = dataVencimentoDate - DateTime.Now;
-                    int diasRestantesValor = (int)diasRestantes.TotalDays;
-
-                    string sql = "UPDATE tbl_ControleVenc SET Descricao = @Descricao, CodigoBarra = @CodigoBarra, Unidade = @Unidade, Quantidade = @Quantidade, DataVencimento = @DataVencimento, Observacao = @Observacao, DiasRestantes = @DiasRestantes WHERE Codigo = @Codigo";
-
-                    using (SqlConnection con = connection.ReturnConnection())
-                    using (SqlCommand cmd = new SqlCommand(sql, con))
+                    if (buttonText == "Salvar")
                     {
-                        cmd.Parameters.AddWithValue("@Descricao", descricao);
-                        cmd.Parameters.AddWithValue("@CodigoBarra", codigoBarra);
-                        cmd.Parameters.AddWithValue("@Unidade", unidade);
-                        cmd.Parameters.AddWithValue("@Quantidade", quantidade);
-                        cmd.Parameters.AddWithValue("@DataVencimento", dataVencimentoDate);
-                        cmd.Parameters.AddWithValue("@Observacao", observacao);
-                        cmd.Parameters.AddWithValue("@DiasRestantes", diasRestantesValor);
                         cmd.Parameters.AddWithValue("@Codigo", codigo);
+                    }
 
-                        con.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                    con.Open();
+                    int rowsAffected = cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show(buttonText == "Incluir" ? "Dados inseridos com sucesso!" : "Dados atualizados com sucesso!", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LimparCampos();
+                        formPrincipal.AtualizarListView();
+                        if (buttonText == "Salvar")
                         {
-                            MessageBox.Show("Dados atualizados com sucesso!", "Êxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            formPrincipal.AtualizarListView();
                             this.Close();
                         }
-                        else
-                        {
-                            MessageBox.Show("Nenhum dado foi atualizado. Verifique os valores e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show(buttonText == "Incluir" ? "Nenhum dado foi inserido. Verifique os valores e tente novamente." : "Nenhum dado foi atualizado. Verifique os valores e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                catch (FormatException)
-                {
-                    MessageBox.Show("A data de vencimento não está em um formato válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show("Erro ao atualizar dados: " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (FormatException err)
+            {
+                MessageBox.Show("A data de vencimento não está em um formato válido. " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Erro ao " + (buttonText == "Incluir" ? "inserir" : "atualizar") + " dados: " + err.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-		// Tem a funcionalidade de apagar ou "limpar" os dados inseridos nos diferentes campos do formulário, 
-		// deixando-os vazios ou com valores padrão, de forma a preparar o formulário para uma nova entrada de informações.
+        // Tem a funcionalidade de apagar ou "limpar" os dados inseridos nos diferentes campos do formulário, 
+        // deixando-os vazios ou com valores padrão, de forma a preparar o formulário para uma nova entrada de informações.
 
         private void LimparCampos()
         {

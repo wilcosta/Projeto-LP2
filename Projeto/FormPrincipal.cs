@@ -24,7 +24,7 @@ namespace Projeto
             txbBuscar.KeyUp += new KeyEventHandler(BtnBuscar_KeyUp);
         }
 
-        // Este método recebe a data de vencimento como parâmetro e calcula os dias restantes com base na data atual.
+        // Método que aceita a data de vencimento como parâmetro e calcula os dias restantes com base na data atual.
 
         private int CalcularDiasRestantes(DateTime dataVencimento)
         {
@@ -45,10 +45,25 @@ namespace Projeto
                 {
                     try
                     {
+                        //string sql = "SELECT Codigo, Descricao, CodigoBarra, Unidade, Quantidade, DataVencimento, DiasRestantes, Observacao FROM tbl_ControleVenc";
                         string sql = "SELECT Codigo, Descricao, CodigoBarra, Unidade, Quantidade, DataVencimento, Observacao FROM tbl_ControleVenc";
+
                         using (SqlCommand command = new SqlCommand(sql, con))
                         {
                             SqlDataReader reader = command.ExecuteReader();
+
+                            //while (reader.Read())
+                            //{
+                            //    ListViewItem item = new ListViewItem(reader["Codigo"].ToString());
+                            //    item.SubItems.Add(reader["Descricao"].ToString());
+                            //    item.SubItems.Add(reader["CodigoBarra"].ToString());
+                            //    item.SubItems.Add(reader["Unidade"].ToString());
+                            //    item.SubItems.Add(reader["Quantidade"].ToString());
+                            //    item.SubItems.Add(Convert.ToDateTime(reader["DataVencimento"]).ToShortDateString());
+                            //    item.SubItems.Add(reader["DiasRestantes"].ToString());
+                            //    item.SubItems.Add(reader["Observacao"].ToString());
+                            //    ltvFormPrincipal.Items.Add(item);
+                            //}
 
                             while (reader.Read())
                             {
@@ -65,7 +80,6 @@ namespace Projeto
                             }
 
                             reader.Close();
-
                         }
                     }
                     catch (Exception err)
@@ -91,8 +105,8 @@ namespace Projeto
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            FormCadastrarProdutos frmCad = new FormCadastrarProdutos(this);
-            frmCad.ShowDialog();
+            FormCadastrarProdutos formCad = new FormCadastrarProdutos(this);
+            formCad.ShowDialog();
         }
 
         // Este código será executado toda vez que o usuário clicar duas vezes em um item da ListView. O código verifica se o item está selecionado.
@@ -260,14 +274,14 @@ namespace Projeto
 
         private void BtnRegistrarBaixa_Click(object sender, EventArgs e)
         {
-            FormRegistrarBaixa frmBaixa = new FormRegistrarBaixa();
-            frmBaixa.ShowDialog();
+            FormRegistrarBaixa formBaixa = new FormRegistrarBaixa();
+            formBaixa.ShowDialog();
         }
 
         private void BtnGerenciar_Click(object sender, EventArgs e)
         {
-            FormGerenciar frmGestao = new FormGerenciar();
-            frmGestao.ShowDialog();
+            FormGerenciar formGestao = new FormGerenciar();
+            formGestao.ShowDialog();
         }
     }
 }
