@@ -24,8 +24,8 @@ namespace Projeto
 
         private void BtnCadastrarNovoUsuario_Click(object sender, EventArgs e)
         {
-            FormCadastrarUsuarios formCadastro = new FormCadastrarUsuarios(connection);
-            formCadastro.ShowDialog();
+            FormCadastrarUsuarios frmCadastro = new FormCadastrarUsuarios(connection);
+            frmCadastro.ShowDialog();
         }
     }
 }
