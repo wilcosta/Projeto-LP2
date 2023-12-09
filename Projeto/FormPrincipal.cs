@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -24,13 +25,14 @@ namespace Projeto
             txbBuscar.KeyUp += new KeyEventHandler(BtnBuscar_KeyUp);
         }
 
-        // Método que aceita a data de vencimento como parâmetro e calcula os dias restantes com base na data atual.
+        // Realiza o cálculo dos dias restantes com base na data atual do sistema.
 
         private int CalcularDiasRestantes(DateTime dataVencimento)
         {
-            TimeSpan diff = dataVencimento - DateTime.Now;
-            return Math.Max(0, diff.Days);
+            TimeSpan diff = dataVencimento.Date - DateTime.Now.Date;
+            return diff.Days;
         }
+
 
         // Recupera os dados de uma tabela do banco de dados e os exibe na ListView. Primeiro, ele limpa a ListView. Em seguida, ele conecta-se ao banco
         // de dados e executa uma consulta SQL para obter os dados. Depois, ele percorre os resultados da consulta e cria um item da ListView para cada linha.
@@ -45,25 +47,14 @@ namespace Projeto
                 {
                     try
                     {
-                        //string sql = "SELECT Codigo, Descricao, CodigoBarra, Unidade, Quantidade, DataVencimento, DiasRestantes, Observacao FROM tbl_ControleVenc";
                         string sql = "SELECT Codigo, Descricao, CodigoBarra, Unidade, Quantidade, DataVencimento, Observacao FROM tbl_ControleVenc";
 
                         using (SqlCommand command = new SqlCommand(sql, con))
                         {
                             SqlDataReader reader = command.ExecuteReader();
 
-                            //while (reader.Read())
-                            //{
-                            //    ListViewItem item = new ListViewItem(reader["Codigo"].ToString());
-                            //    item.SubItems.Add(reader["Descricao"].ToString());
-                            //    item.SubItems.Add(reader["CodigoBarra"].ToString());
-                            //    item.SubItems.Add(reader["Unidade"].ToString());
-                            //    item.SubItems.Add(reader["Quantidade"].ToString());
-                            //    item.SubItems.Add(Convert.ToDateTime(reader["DataVencimento"]).ToShortDateString());
-                            //    item.SubItems.Add(reader["DiasRestantes"].ToString());
-                            //    item.SubItems.Add(reader["Observacao"].ToString());
-                            //    ltvFormPrincipal.Items.Add(item);
-                            //}
+                            // Criar uma lista para armazenar os itens da ListView
+                            List<ListViewItem> itens = new List<ListViewItem>();
 
                             while (reader.Read())
                             {
@@ -74,12 +65,46 @@ namespace Projeto
                                 item.SubItems.Add(reader["Quantidade"].ToString());
                                 item.SubItems.Add(Convert.ToDateTime(reader["DataVencimento"]).ToShortDateString());
                                 int diasRestantes = CalcularDiasRestantes(Convert.ToDateTime(reader["DataVencimento"]));
-                                item.SubItems.Add(diasRestantes.ToString());
+
+                                if (diasRestantes < 0)
+                                {
+                                    item.SubItems.Add("Vencido(s)");
+                                }
+                                else if (diasRestantes == 0)
+                                {
+                                    item.SubItems.Add("Vence(m) Hoje");
+                                }
+                                else
+                                {
+                                    item.SubItems.Add(diasRestantes.ToString());
+                                }
+
                                 item.SubItems.Add(reader["Observacao"].ToString());
-                                ltvFormPrincipal.Items.Add(item);
+                                itens.Add(item);
                             }
 
                             reader.Close();
+
+                            // Realiza a ordenação dos itens com base no campo "DiasRestantes"
+                            itens.Sort((item1, item2) =>
+                            {
+                                string status1 = item1.SubItems[6].Text;
+                                string status2 = item2.SubItems[6].Text;
+
+                                // Realiza a ordenação personalizada:
+                                if (status1 == "Vencido(s)") return -1; // "Vencido(s)" fica primeiro
+                                if (status2 == "Vencido(s)") return 1;
+                                if (status1 == "Vence(m) Hoje") return -1; // "Vence(m) Hoje" fica em seguida
+                                if (status2 == "Vence(m) Hoje") return 1;
+
+                                // Realiza a ordenação por dias restantes em ordem crescente
+                                int diasRestantesItem1 = int.Parse(item1.SubItems[6].Text);
+                                int diasRestantesItem2 = int.Parse(item2.SubItems[6].Text);
+                                return diasRestantesItem1.CompareTo(diasRestantesItem2);
+                            });
+
+                            // Adiciona os itens ordenados à ListView
+                            ltvFormPrincipal.Items.AddRange(itens.ToArray());
                         }
                     }
                     catch (Exception err)
@@ -89,6 +114,7 @@ namespace Projeto
                 }
             }
         }
+
 
         // Se o usuário clicar no link "logoff", esse método fecha a tela principal e abre novamentente a tela de "Login",
         // permitindo assim a troca de usuário, por exemplo.
@@ -154,7 +180,7 @@ namespace Projeto
         // falhar no comando SQL, será exibida uma mensagem de erro ao usuário. Caso o usuário cancele a exclusão, os botões "Excluir" e "Editar" serão desabilitados.
 
         private void BtnExcluir_Click(object sender, EventArgs e)
-        {
+            {
             if (ltvFormPrincipal.SelectedItems.Count > 0)
             {
                 ListViewItem selectedItem = ltvFormPrincipal.SelectedItems[0];
