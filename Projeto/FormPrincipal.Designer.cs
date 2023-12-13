@@ -49,6 +49,7 @@
             this.btnRegistrarBaixa = new System.Windows.Forms.Button();
             this.btnGerenciar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGerarRelatorioCSV = new System.Windows.Forms.Button();
             this.tblLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -262,11 +263,25 @@
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
+            // btnGerarRelatorioCSV
+            // 
+            this.btnGerarRelatorioCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGerarRelatorioCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerarRelatorioCSV.Location = new System.Drawing.Point(329, 654);
+            this.btnGerarRelatorioCSV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnGerarRelatorioCSV.Name = "btnGerarRelatorioCSV";
+            this.btnGerarRelatorioCSV.Size = new System.Drawing.Size(150, 35);
+            this.btnGerarRelatorioCSV.TabIndex = 30;
+            this.btnGerarRelatorioCSV.Text = "Relatório";
+            this.btnGerarRelatorioCSV.UseVisualStyleBackColor = true;
+            this.btnGerarRelatorioCSV.Click += new System.EventHandler(this.BtnGerarRelatorioCSV_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.btnGerarRelatorioCSV);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGerenciar);
             this.Controls.Add(this.btnRegistrarBaixa);
@@ -311,5 +326,6 @@
         private System.Windows.Forms.Button btnRegistrarBaixa;
         private System.Windows.Forms.Button btnGerenciar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnGerarRelatorioCSV;
     }
 }

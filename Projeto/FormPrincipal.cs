@@ -7,6 +7,8 @@ using System.Drawing;
 using System.Reflection.Emit;
 using System.Windows.Forms;
 using static System.Windows.Forms.LinkLabel;
+using System.IO;
+using System.Text;
 
 namespace Projeto
 {
@@ -308,6 +310,40 @@ namespace Projeto
         {
             FormGerenciar formGestao = new FormGerenciar();
             formGestao.ShowDialog();
+        }
+
+        // Método de Geração de Relatório CSV
+        private void GerarRelatorioCSV()
+        {
+            // Obtém o caminho para gravar no Desktop
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            // Realiza a combinação do caminho do Desktop com o nome do arquivo CSV
+            string filePath = Path.Combine(desktopPath, "relatorio.csv");
+
+            // Cria o arquivo CSV com a codificação UTF-8 e BOM para evitar problemas de acentuação
+            using (var writer = new StreamWriter(filePath, false, Encoding.UTF8))
+            {
+                // "Escreve" / replica o mesmo cabeçalho da ListView
+                writer.WriteLine("Código;Descrição;Código de Barras;Unidade;Quantidade;Data Vencimento;Dias Restantes;Observação");
+
+                // Escreve os dados
+                foreach (ListViewItem item in ltvFormPrincipal.Items)
+                {
+                    // Obtém os textos de cada subitem, separados por ponto e vírgula
+                    string codigoBarras = $"\'{item.SubItems[2].Text}"; // Adiciona uma aspa simples antes do código de barras p/ evitar formato científico no Excel
+                    string line = $"{item.SubItems[0].Text};{item.SubItems[1].Text};{codigoBarras};{item.SubItems[3].Text};{item.SubItems[4].Text};{item.SubItems[5].Text};{item.SubItems[6].Text};{item.SubItems[7].Text}";
+
+                    writer.WriteLine(line);
+                }
+            } 
+
+            MessageBox.Show($"Relatório gerado com sucesso em: {filePath}", "Relatório Gerado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnGerarRelatorioCSV_Click(object sender, EventArgs e)
+        {
+            GerarRelatorioCSV();
         }
     }
 }
