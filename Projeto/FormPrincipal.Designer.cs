@@ -58,7 +58,7 @@
             // 
             this.btnApagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.Location = new System.Drawing.Point(13, 654);
+            this.btnApagar.Location = new System.Drawing.Point(13, 616);
             this.btnApagar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(150, 35);
@@ -71,7 +71,7 @@
             // 
             this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(171, 654);
+            this.btnEditar.Location = new System.Drawing.Point(171, 616);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(150, 35);
@@ -100,7 +100,7 @@
             this.ltvFormPrincipal.Location = new System.Drawing.Point(13, 98);
             this.ltvFormPrincipal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ltvFormPrincipal.Name = "ltvFormPrincipal";
-            this.ltvFormPrincipal.Size = new System.Drawing.Size(1324, 546);
+            this.ltvFormPrincipal.Size = new System.Drawing.Size(1324, 510);
             this.ltvFormPrincipal.TabIndex = 12;
             this.ltvFormPrincipal.UseCompatibleStateImageBehavior = false;
             this.ltvFormPrincipal.View = System.Windows.Forms.View.Details;
@@ -127,7 +127,7 @@
             // 
             this.columnHeader4.Text = "Unid. Medida";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 110;
+            this.columnHeader4.Width = 125;
             // 
             // columnHeader5
             // 
@@ -150,12 +150,13 @@
             // columnHeader8
             // 
             this.columnHeader8.Text = "Observação";
-            this.columnHeader8.Width = 275;
+            this.columnHeader8.Width = 260;
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(1187, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(1187, 53);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(150, 35);
@@ -167,9 +168,9 @@
             // 
             // BtnCadastrar
             // 
-            this.BtnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCadastrar.Location = new System.Drawing.Point(872, 652);
+            this.BtnCadastrar.Location = new System.Drawing.Point(874, 616);
             this.BtnCadastrar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnCadastrar.Name = "BtnCadastrar";
             this.BtnCadastrar.Size = new System.Drawing.Size(150, 35);
@@ -180,11 +181,12 @@
             // 
             // txbBuscar
             // 
+            this.txbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbBuscar.Location = new System.Drawing.Point(870, 61);
+            this.txbBuscar.Location = new System.Drawing.Point(874, 58);
             this.txbBuscar.MaxLength = 50;
             this.txbBuscar.Name = "txbBuscar";
-            this.txbBuscar.Size = new System.Drawing.Size(309, 29);
+            this.txbBuscar.Size = new System.Drawing.Size(307, 29);
             this.txbBuscar.TabIndex = 23;
             // 
             // lblSaudacao
@@ -235,7 +237,8 @@
             // 
             // btnRegistrarBaixa
             // 
-            this.btnRegistrarBaixa.Location = new System.Drawing.Point(1029, 652);
+            this.btnRegistrarBaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarBaixa.Location = new System.Drawing.Point(1031, 616);
             this.btnRegistrarBaixa.Name = "btnRegistrarBaixa";
             this.btnRegistrarBaixa.Size = new System.Drawing.Size(150, 35);
             this.btnRegistrarBaixa.TabIndex = 27;
@@ -245,7 +248,8 @@
             // 
             // btnGerenciar
             // 
-            this.btnGerenciar.Location = new System.Drawing.Point(1187, 652);
+            this.btnGerenciar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGerenciar.Location = new System.Drawing.Point(1187, 616);
             this.btnGerenciar.Name = "btnGerenciar";
             this.btnGerenciar.Size = new System.Drawing.Size(150, 35);
             this.btnGerenciar.TabIndex = 28;
@@ -256,7 +260,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 58);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(220, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -265,9 +269,9 @@
             // 
             // btnGerarRelatorioCSV
             // 
-            this.btnGerarRelatorioCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGerarRelatorioCSV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGerarRelatorioCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerarRelatorioCSV.Location = new System.Drawing.Point(329, 654);
+            this.btnGerarRelatorioCSV.Location = new System.Drawing.Point(329, 616);
             this.btnGerarRelatorioCSV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGerarRelatorioCSV.Name = "btnGerarRelatorioCSV";
             this.btnGerarRelatorioCSV.Size = new System.Drawing.Size(150, 35);
@@ -280,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1350, 689);
             this.Controls.Add(this.btnGerarRelatorioCSV);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnGerenciar);

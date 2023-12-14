@@ -38,7 +38,7 @@
             // btnCadastrarNovoUsuario
             // 
             this.btnCadastrarNovoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarNovoUsuario.Location = new System.Drawing.Point(17, 46);
+            this.btnCadastrarNovoUsuario.Location = new System.Drawing.Point(15, 35);
             this.btnCadastrarNovoUsuario.Name = "btnCadastrarNovoUsuario";
             this.btnCadastrarNovoUsuario.Size = new System.Drawing.Size(283, 65);
             this.btnCadastrarNovoUsuario.TabIndex = 0;
@@ -49,7 +49,7 @@
             // btnRedefinirSenhaUsuario
             // 
             this.btnRedefinirSenhaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRedefinirSenhaUsuario.Location = new System.Drawing.Point(17, 117);
+            this.btnRedefinirSenhaUsuario.Location = new System.Drawing.Point(15, 110);
             this.btnRedefinirSenhaUsuario.Name = "btnRedefinirSenhaUsuario";
             this.btnRedefinirSenhaUsuario.Size = new System.Drawing.Size(283, 65);
             this.btnRedefinirSenhaUsuario.TabIndex = 1;
@@ -59,7 +59,7 @@
             // btnExibirUsuariosCadastrados
             // 
             this.btnExibirUsuariosCadastrados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExibirUsuariosCadastrados.Location = new System.Drawing.Point(17, 188);
+            this.btnExibirUsuariosCadastrados.Location = new System.Drawing.Point(15, 185);
             this.btnExibirUsuariosCadastrados.Name = "btnExibirUsuariosCadastrados";
             this.btnExibirUsuariosCadastrados.Size = new System.Drawing.Size(283, 65);
             this.btnExibirUsuariosCadastrados.TabIndex = 2;

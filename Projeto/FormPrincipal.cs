@@ -70,11 +70,11 @@ namespace Projeto
 
                                 if (diasRestantes < 0)
                                 {
-                                    item.SubItems.Add("Vencido(s)");
+                                    item.SubItems.Add("Vencido");
                                 }
                                 else if (diasRestantes == 0)
                                 {
-                                    item.SubItems.Add("Vence(m) Hoje");
+                                    item.SubItems.Add("Vence Hoje");
                                 }
                                 else
                                 {
@@ -94,10 +94,10 @@ namespace Projeto
                                 string status2 = item2.SubItems[6].Text;
 
                                 // Realiza a ordenação personalizada:
-                                if (status1 == "Vencido(s)") return -1; // "Vencido(s)" fica primeiro
-                                if (status2 == "Vencido(s)") return 1;
-                                if (status1 == "Vence(m) Hoje") return -1; // "Vence(m) Hoje" fica em seguida
-                                if (status2 == "Vence(m) Hoje") return 1;
+                                if (status1 == "Vencido") return -1; // "Vencido(s)" fica primeiro
+                                if (status2 == "Vencido") return 1;
+                                if (status1 == "Vence Hoje") return -1; // "Vence(m) Hoje" fica em seguida
+                                if (status2 == "Vence Hoje") return 1;
 
                                 // Realiza a ordenação por dias restantes em ordem crescente
                                 int diasRestantesItem1 = int.Parse(item1.SubItems[6].Text);
@@ -321,7 +321,7 @@ namespace Projeto
             // Realiza a combinação do caminho do Desktop com o nome do arquivo CSV
             string filePath = Path.Combine(desktopPath, "relatorio.csv");
 
-            // Cria o arquivo CSV com a codificação UTF-8 e BOM para evitar problemas de acentuação
+            // Cria o arquivo CSV com a codificação UTF-8 para evitar problemas de acentuação
             using (var writer = new StreamWriter(filePath, false, Encoding.UTF8))
             {
                 // "Escreve" / replica o mesmo cabeçalho da ListView
@@ -338,7 +338,7 @@ namespace Projeto
                 }
             } 
 
-            MessageBox.Show($"Relatório gerado com sucesso em: {filePath}", "Relatório Gerado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Relatório gerado com sucesso em: {filePath}", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnGerarRelatorioCSV_Click(object sender, EventArgs e)

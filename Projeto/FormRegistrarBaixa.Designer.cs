@@ -55,7 +55,7 @@
             // 
             this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(14, 267);
+            this.btnRemover.Location = new System.Drawing.Point(14, 265);
             this.btnRemover.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(150, 35);
@@ -140,7 +140,7 @@
             // 
             this.btnPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(618, 25);
+            this.btnPesquisar.Location = new System.Drawing.Point(618, 27);
             this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(150, 35);
@@ -153,7 +153,7 @@
             // 
             this.btnAdicionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(16, 301);
+            this.btnAdicionar.Location = new System.Drawing.Point(16, 299);
             this.btnAdicionar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(150, 35);
@@ -188,7 +188,7 @@
             // txbPesquisa
             // 
             this.txbPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPesquisa.Location = new System.Drawing.Point(302, 32);
+            this.txbPesquisa.Location = new System.Drawing.Point(302, 35);
             this.txbPesquisa.Name = "txbPesquisa";
             this.txbPesquisa.Size = new System.Drawing.Size(309, 26);
             this.txbPesquisa.TabIndex = 1;
@@ -198,7 +198,7 @@
             // 
             this.bntConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bntConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntConfirmar.Location = new System.Drawing.Point(616, 267);
+            this.bntConfirmar.Location = new System.Drawing.Point(616, 265);
             this.bntConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bntConfirmar.Name = "bntConfirmar";
             this.bntConfirmar.Size = new System.Drawing.Size(150, 35);
