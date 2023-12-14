@@ -59,7 +59,21 @@ namespace Projeto
         private void FormRegistrarBaixa_Load(object sender, EventArgs e)
         {
             CarregarDados();
+
+            btnAdicionar.Enabled = false;
+            btnRemover.Enabled = false;
+            btnConfirmar.Enabled = false;
+
+            ltvRegBaixaSelecionar.ItemChecked += LtvRegBaixaSelecionar_ItemChecked;
         }
+
+
+        private void LtvRegBaixaSelecionar_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            // Habilita o botão "Adicionar" se pelo menos um item estiver selecionado
+            btnAdicionar.Enabled = ltvRegBaixaSelecionar.CheckedItems.Count > 0;
+        }
+
 
         private void FormRegistrarBaixa_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -124,6 +138,11 @@ namespace Projeto
                     MessageBox.Show("Este item já foi adicionado.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
+            btnRemover.Enabled = ltvRegBaixaSelecionado.Items.Count > 0;
+            btnConfirmar.Enabled = ltvRegBaixaSelecionado.Items.Count > 0;
+            
+
         }
 
         private void QuantidadeTextBox_TextChanged(object sender, EventArgs e)
@@ -182,6 +201,11 @@ namespace Projeto
             {
                 ltvRegBaixaSelecionado.Controls.Remove(control);
             }
+
+            // Desativa os botões se a lista estiver vazia
+            btnRemover.Enabled = ltvRegBaixaSelecionado.Items.Count > 0;
+            btnConfirmar.Enabled = ltvRegBaixaSelecionado.Items.Count > 0;
+
         }
 
         private void BtnPesquisar_Click(object sender, EventArgs e)

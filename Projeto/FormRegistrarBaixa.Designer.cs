@@ -44,7 +44,7 @@
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.ltvRegBaixaSelecionado = new System.Windows.Forms.ListView();
             this.txbPesquisa = new System.Windows.Forms.TextBox();
-            this.bntConfirmar = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.gpbSelecionar = new System.Windows.Forms.GroupBox();
             this.gpbSelecionado = new System.Windows.Forms.GroupBox();
             this.gpbSelecionar.SuspendLayout();
@@ -194,18 +194,18 @@
             this.txbPesquisa.TabIndex = 1;
             this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxbPesquisa_KeyUp);
             // 
-            // bntConfirmar
+            // btnConfirmar
             // 
-            this.bntConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bntConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntConfirmar.Location = new System.Drawing.Point(616, 265);
-            this.bntConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bntConfirmar.Name = "bntConfirmar";
-            this.bntConfirmar.Size = new System.Drawing.Size(150, 35);
-            this.bntConfirmar.TabIndex = 7;
-            this.bntConfirmar.Text = "Confirmar";
-            this.bntConfirmar.UseVisualStyleBackColor = true;
-            this.bntConfirmar.Click += new System.EventHandler(this.BntConfirmar_Click);
+            this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(616, 265);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(150, 35);
+            this.btnConfirmar.TabIndex = 7;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.BntConfirmar_Click);
             // 
             // gpbSelecionar
             // 
@@ -226,7 +226,7 @@
             // gpbSelecionado
             // 
             this.gpbSelecionado.Controls.Add(this.ltvRegBaixaSelecionado);
-            this.gpbSelecionado.Controls.Add(this.bntConfirmar);
+            this.gpbSelecionado.Controls.Add(this.btnConfirmar);
             this.gpbSelecionado.Controls.Add(this.btnRemover);
             this.gpbSelecionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbSelecionado.Location = new System.Drawing.Point(14, 388);
@@ -276,7 +276,7 @@
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.ListView ltvRegBaixaSelecionado;
         private System.Windows.Forms.TextBox txbPesquisa;
-        private System.Windows.Forms.Button bntConfirmar;
+        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.GroupBox gpbSelecionar;
         private System.Windows.Forms.GroupBox gpbSelecionado;
     }
